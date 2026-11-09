@@ -1,0 +1,404 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 287,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "initialGDVersion": "5.6.287",
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": false,
+    "orientation": "default",
+    "packageName": "com.example.gamename",
+    "pixelsRounding": false,
+    "projectUuid": "2df21241-9165-4a83-86ab-125b76e7b1e8",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "adaptWidth",
+    "templateSlug": "",
+    "version": "1.0.0",
+    "name": "Last Spark",
+    "description": "",
+    "author": "",
+    "windowWidth": 960,
+    "windowHeight": 540,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 1.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": true
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/Generic Character 5_Down_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Down_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/a32f8b549039cff5d8707e7b2140323e984829b7eb44a23860cb4bdc1036bbfd_Generic Character 5_Down_1.png",
+          "name": "Generic Character 5_Down_1.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Down_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Down_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/bd30bc0492788f269635c81e8e831a55c27884661adb87182cb06d1317754ac9_Generic Character 5_Down_2.png",
+          "name": "Generic Character 5_Down_2.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Down_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Down_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/9a1212693b97f9928d5d7df1a7d65f8973b1aa17e8f50153982bb7d08bcf18fe_Generic Character 5_Down_3.png",
+          "name": "Generic Character 5_Down_3.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Left_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Left_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/a124e610c802f46f60d1a66dd3e933dad55c1ae96397ca7b60a463aa029dd760_Generic Character 5_Left_1.png",
+          "name": "Generic Character 5_Left_1.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Left_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Left_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/7e229b36baf768fd5fc042c0df2be91ae1b19526e5e881109b37320220e3947a_Generic Character 5_Left_2.png",
+          "name": "Generic Character 5_Left_2.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Left_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Left_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/d52ce5e7eb008c0918dd7b642151b36f4e3fcdc5047b12b3b2ebb89ca8999f94_Generic Character 5_Left_3.png",
+          "name": "Generic Character 5_Left_3.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Right_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Right_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/b47af39342bcef8808a1a29a87278d867769ce2419f0fe471075cbda5c0a37c9_Generic Character 5_Right_1.png",
+          "name": "Generic Character 5_Right_1.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Right_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Right_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/02d4837ed7288e058d71dc926b5769058a17e7da29675b2861f8a05bbf3365e1_Generic Character 5_Right_2.png",
+          "name": "Generic Character 5_Right_2.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Right_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Right_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/6e0b376c109b24451de045717920bc30246f2cfb78142b35be128d2c123d8d78_Generic Character 5_Right_3.png",
+          "name": "Generic Character 5_Right_3.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Up_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Up_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/2ebeadd7d1e597829837170b7e4a210df12033601f42e2a351b83e74ab381d12_Generic Character 5_Up_1.png",
+          "name": "Generic Character 5_Up_1.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Up_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Up_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/454cca860c7e32dd75184504a7b3e878f1006696f022c40147c82f449e86e02e_Generic Character 5_Up_2.png",
+          "name": "Generic Character 5_Up_2.png"
+        }
+      },
+      {
+        "file": "assets/Generic Character 5_Up_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Generic Character 5_Up_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 RPG Characters/Retro/Generic Character/89f2b471f420c7850ed67e81cb9aaa3ef5971f71a58f1bdc9c1602c52680702d_Generic Character 5_Up_3.png",
+          "name": "Generic Character 5_Up_3.png"
+        }
+      },
+      {
+        "file": "Foozle_2DC0001_Cute_Robot/Assets/Idle/Armature_Idle_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Foozle_2DC0001_Cute_Robot/Assets/Idle/Armature_Idle_00.png",
+        "smoothed": true,
+        "userAdded": false
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "b": 255,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Untitled_32scene",
+      "name": "Untitled scene",
+      "r": 247,
+      "renderer3DWorldScale": 100,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 249,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.779171254765457,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "NewSprite",
+          "persistentUuid": "097ea77a-8319-464e-a897-5a9d33e0c690",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": []
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "NewSprite"
+          }
+        ]
+      },
+      "events": [],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300,
+                "shadowDistance": 2000,
+                "shadowNormalBias": 1
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "shadowRenderingMode": "fittedToCameraView",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior"
+        }
+      ]
+    }
+  ],
+  "layoutsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "itemName": "Untitled scene"
+      }
+    ]
+  },
+  "externalEvents": [],
+  "externalEventsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "testsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "eventsFunctionsExtensions": [],
+  "externalLayouts": [],
+  "externalLayoutsFolderStructure": {
+    "folderName": "__ROOT"
+  }
+}
