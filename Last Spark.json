@@ -899,6 +899,17 @@
         "name": "Foozle_2DC0001_Cute_Robot/Assets/Jump/Armature_Jump_20.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Roboto-Bold.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "3bd40ac788d44626fd640ec67ef04ab0364816b5e8c831f2077bff8805cfe689_Roboto-Bold.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/3bd40ac788d44626fd640ec67ef04ab0364816b5e8c831f2077bff8805cfe689_Roboto-Bold.ttf",
+          "name": "gdevelop-asset-store"
+        }
       }
     ]
   },
@@ -938,7 +949,20 @@
         "gameEditorMode": "instances-editor"
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "name": "Battery",
+          "persistentUuid": "2b5eb35e-681a-48c0-abde-686168f54445",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "GameOver",
+          "persistentUuid": "cdc351f9-214e-4d78-b022-4ea013030c5b",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -960,13 +984,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 64,
+          "depth": 1,
+          "height": 94,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
           "persistentUuid": "653b1262-c719-419e-a6cb-2a2c7b381307",
-          "width": 960,
-          "x": 3,
+          "width": 964,
+          "x": -1,
           "y": 475,
           "zOrder": 2,
           "numberProperties": [],
@@ -989,6 +1014,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BatteryText",
+          "persistentUuid": "35a7ed42-09aa-4e4e-9c4a-25d19e953847",
+          "width": 0,
+          "x": 18,
+          "y": 18,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1003,10 +1044,10 @@
           "effects": [],
           "behaviors": [
             {
-              "ignoreDefaultControls": true,
               "isFolded": true,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "ignoreDefaultControls": true,
               "acceleration": 1500,
               "canGoDownFromJumpthru": true,
               "canGrabPlatforms": false,
@@ -4111,10 +4152,10 @@
           "effects": [],
           "behaviors": [
             {
-              "canBeGrabbed": true,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ],
@@ -4168,6 +4209,50 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "BatteryText",
+          "persistentUuid": "54218314-ab5c-4af3-b8ab-453da4f9ceaf",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Battery: 100%",
+          "font": "3bd40ac788d44626fd640ec67ef04ab0364816b5e8c831f2077bff8805cfe689_Roboto-Bold.ttf",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "9;208;239",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Battery: 100%",
+            "font": "3bd40ac788d44626fd640ec67ef04ab0364816b5e8c831f2077bff8805cfe689_Roboto-Bold.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -4178,6 +4263,9 @@
           },
           {
             "objectName": "Ground"
+          },
+          {
+            "objectName": "BatteryText"
           }
         ]
       },
@@ -4650,9 +4738,189 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "BATTERY - Battery delplation Logic"
+        },
+        {
+          "aiGeneratedEventId": "01M73HQ80J8ARRMRD9QZA24A3Z",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "BATTERY - Battery depletion Logic"
+        },
+        {
+          "aiGeneratedEventId": "01M73HQ80J8ARRMRD9QZA24A3Z",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                "=",
+                "100"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BatteryDrain\""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M73HQ80J8ARRMRD9QZA24A3Z",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"BatteryDrain\"",
+                ">=",
+                "1.5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                "=",
+                "max(0, Battery)"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BatteryDrain\""
+              ]
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "BatteryText",
+                "Text",
+                "=",
+                "\"BATTERY: \" + ToString(round(Variable(Battery))) + \"%\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                "<=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameOverDelay\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameOverDelay\"",
+                ">=",
+                "1.5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"GameOver\"",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -4757,6 +5025,202 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        }
+      ]
+    },
+    {
+      "b": 0,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "GameOver",
+      "name": "GameOver",
+      "r": 0,
+      "renderer3DWorldScale": 100,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 0,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.7291666666666666,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "GameOverText",
+          "persistentUuid": "5005b268-4375-4723-bf35-2417af961919",
+          "width": 0,
+          "x": 209,
+          "y": 148,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "GameOverText",
+          "persistentUuid": "a87d2c5b-dcaf-4732-b600-672ba7ef19e0",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "POWER DEPLETED\n\nYour battery has run out.",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 50,
+          "color": {
+            "b": 37,
+            "g": 6,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "POWER DEPLETED\n\nYour battery has run out.",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 50,
+            "lineHeight": 0,
+            "color": "255;6;37"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "GameOverText"
+          }
+        ]
+      },
+      "events": [],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300,
+                "shadowDistance": 2000,
+                "shadowNormalBias": 1
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "shadowRenderingMode": "fittedToCameraView",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
     }
@@ -4766,6 +5230,9 @@
     "children": [
       {
         "itemName": "Level01"
+      },
+      {
+        "itemName": "GameOver"
       }
     ]
   },
