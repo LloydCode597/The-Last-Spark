@@ -955,13 +955,25 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.7291666666666679,
+        "zoomFactor": 0.6601120098331863,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
       },
       "objectsGroups": [],
       "variables": [
+        {
+          "name": "CamTargetY",
+          "persistentUuid": "653e0d35-428b-4cdb-897c-58e85ed93c44",
+          "type": "number",
+          "value": 400
+        },
+        {
+          "name": "CamTargetX",
+          "persistentUuid": "79ab1904-879f-4769-93ab-0776cd2c78b7",
+          "type": "number",
+          "value": 480
+        },
         {
           "name": "Battery",
           "persistentUuid": "2b5eb35e-681a-48c0-abde-686168f54445",
@@ -1032,7 +1044,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "BatteryText",
           "persistentUuid": "35a7ed42-09aa-4e4e-9c4a-25d19e953847",
           "width": 0,
@@ -1058,6 +1070,70 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "5fdcc697-3582-4a9c-a44e-b59ef359a437",
+          "width": 180,
+          "x": 800,
+          "y": 250,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "fc0e2fcd-876d-4053-ba01-5465fb487bff",
+          "width": 160,
+          "x": 1080,
+          "y": 190,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "9ecd9625-abbe-4470-8207-c8d933cbd802",
+          "width": 170,
+          "x": 1350,
+          "y": 260,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 94,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "3e6849ad-06c6-4d45-b505-e7a213f96344",
+          "width": 440,
+          "x": 1620,
+          "y": 400,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1072,7 +1148,7 @@
           "effects": [],
           "behaviors": [
             {
-              "jumpSpeed": 800,
+              "jumpSpeed": 700,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "ignoreDefaultControls": true,
@@ -5062,6 +5138,203 @@
               ]
             }
           ]
+        },
+        {
+          "aiGeneratedEventId": "01M745J4ATRKSWP9DZN42YJFZ2",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "CAMERA - follow the Player horizontally, clamped to the level bounds (viewport width from SceneWindowWidth)"
+        },
+        {
+          "aiGeneratedEventId": "01M74HBY3BDV1Q4YZT7Z3V5G84",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "400",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamTargetX",
+                "=",
+                "min(max(Player.CenterX(), SceneWindowWidth()/2), 2060 - SceneWindowWidth()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamTargetY",
+                "=",
+                "400"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M74HBY3BDV1Q4YZT7Z3V5G84",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamTargetX",
+                "=",
+                "min(max(Player.CenterX(), SceneWindowWidth()/2), 2060 - SceneWindowWidth()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraX() + (CamTargetX - CameraX()) * min(1, 10 * TimeDelta())",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M74HBY3BDV1Q4YZT7Z3V5G84",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "CAMERA - vertical: dead zone when grounded, full-sprite visibility clamp in air, smoothed"
+        },
+        {
+          "aiGeneratedEventId": "01M74HBY3BDV1Q4YZT7Z3V5G84",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "abs(Player.CenterY() - CamTargetY)",
+                    ">",
+                    "0.2 * SceneWindowHeight()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamTargetY",
+                    "=",
+                    "Player.CenterY()"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M74HBY3BDV1Q4YZT7Z3V5G84",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamTargetY",
+                "=",
+                "min(CamTargetY, Player.CenterY() - Player.Height()/2 - 25 + SceneWindowHeight()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamTargetY",
+                "=",
+                "max(CamTargetY, Player.CenterY() + Player.Height()/2 + 25 - SceneWindowHeight()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamTargetY",
+                "=",
+                "min(max(CamTargetY, 130), 400)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraY() + (CamTargetY - CameraY()) * min(1, 8 * TimeDelta())",
+                "",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -5132,6 +5405,24 @@
               }
             }
           ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
@@ -5536,6 +5827,209 @@
         "harness.assert(battery && Number(battery.value) <= 100, 'Battery never exceeds 100 (value=' + (battery && battery.value) + ')');",
         "await harness.takeScreenshot('after collection');"
       ]
+    },
+    {
+      "description": "Player can traverse all platforms of the extended Level01 and reach the final generator platform.",
+      "lastRunAt": 1794360359080,
+      "lastRunDurationMs": 566,
+      "lastRunFramesExecuted": 308,
+      "lastRunStatus": "failed",
+      "name": "Level traversal to generator platform",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "// Route (platform tops): floating(326) -> A(250) -> B(190) -> C(260) -> final(400)",
+        "const route = [",
+        "  { x: 640, top: 326, name: 'floating' },",
+        "  { x: 880, top: 250, name: 'A' },",
+        "  { x: 1150, top: 190, name: 'B' },",
+        "  { x: 1430, top: 260, name: 'C' },",
+        "  { x: 1840, top: 400, name: 'final' },",
+        "];",
+        "let idx = 0, failed = null, lastX = -999, lastProgressFrame = 0, jumpHeld = 0;",
+        "for (let i = 0; i < 8000 && idx < route.length; i++) {",
+        "  await harness.stepFrames(1);",
+        "  const p = harness.getObjects('Player')[0];",
+        "  if (!p) { failed = 'player missing at frame ' + i; break; }",
+        "  if (p.y > 700) { failed = 'fell out at x=' + p.x + ' targeting ' + route[idx].name; break; }",
+        "  const t = route[idx];",
+        "  const bottom = p.y + p.height;",
+        "  const dx = t.x - p.x;",
+        "  const bh = p.behaviors.PlatformerObject;",
+        "  const onFloor = bh ? bh.state.IsOnFloor !== false : false;",
+        "  // Waypoint reached: standing on this platform (bottom near its top) within x range",
+        "  if (Math.abs(bottom - t.top) < 50 && Math.abs(dx) < 40) { idx++; continue; }",
+        "  // Stuck detection: if barely moved for 150 frames, force a jump burst",
+        "  if (Math.abs(p.x - lastX) > 10) { lastX = p.x; lastProgressFrame = i; }",
+        "  const stuck = i - lastProgressFrame > 150;",
+        "  if (dx > 15) { harness.setKeyPressed('Right', true); harness.setKeyPressed('Left', false); }",
+        "  else if (dx < -15) { harness.setKeyPressed('Left', true); harness.setKeyPressed('Right', false); }",
+        "  else { harness.setKeyPressed('Left', false); harness.setKeyPressed('Right', false); }",
+        "  const wantsJump = stuck || (onFloor && (t.top < bottom - 30 || dx > 150));",
+        "  if (wantsJump) { jumpHeld = 6; }",
+        "  if (jumpHeld > 0) { harness.setKeyPressed('Space', true); jumpHeld--; }",
+        "  else { harness.setKeyPressed('Space', false); }",
+        "}",
+        "harness.setKeyPressed('Right', false); harness.setKeyPressed('Left', false); harness.setKeyPressed('Space', false);",
+        "harness.assert(!failed, failed || 'no failure');",
+        "harness.assert(idx >= route.length, 'Player traversed all platforms (reached ' + idx + '/' + route.length + ')');",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.assert(p && p.x > 1700, 'Player stands on the final platform (x=' + (p && p.x) + ', y=' + (p && p.y) + ')');",
+        "await harness.takeScreenshot('final platform');"
+      ]
+    },
+    {
+      "description": "Camera follows Player horizontally with clamped bounds; HUD stays on fixed UI layer.",
+      "lastRunAt": 1794362702930,
+      "lastRunDurationMs": 549,
+      "lastRunFramesExecuted": 71,
+      "lastRunStatus": "passed",
+      "name": "Camera follow and HUD",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "const hud = harness.getObjects('BatteryText')[0];",
+        "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText visible on UI layer');",
+        "let cam = harness.getCameraState('');",
+        "harness.assert(Math.abs(cam.x - 480) < 2, 'Camera clamped at left boundary (x=' + cam.x + ')');",
+        "harness.assert(Math.abs(cam.y - 380) < 2, 'Camera Y fixed at 380 (y=' + cam.y + ')');",
+        "// Move player to middle of level: camera should follow freely (no clamp in 480..1580)",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p.id, 1100, 60);",
+        "await harness.stepFrames(20);",
+        "cam = harness.getCameraState('');",
+        "const mid = harness.getObjects('Player')[0];",
+        "harness.assert(Math.abs(cam.x - mid.centerX) < 2, 'Camera follows player in the middle (cam.x=' + Math.round(cam.x) + ', center=' + Math.round(mid.centerX) + ')');",
+        "harness.assert(Math.abs(cam.y - 380) < 2, 'Camera Y still fixed while player is high (y=' + cam.y + ')');",
+        "// Move to the far right: camera clamps at 1580",
+        "harness.setObjectPosition(p.id, 1840, 300);",
+        "await harness.stepFrames(20);",
+        "cam = harness.getCameraState('');",
+        "harness.assert(Math.abs(cam.x - 1580) < 2, 'Camera clamped at right boundary 2060-480=1580 (x=' + Math.round(cam.x) + ')');",
+        "harness.assert(!harness.getObjects('BatteryText')[0].hidden, 'BatteryText still visible after scroll');",
+        "await harness.takeScreenshot('camera at final platform');"
+      ]
+    },
+    {
+      "description": "Vertical dead-zone camera: no bounce on small jumps, follows on high/low platforms with bounds.",
+      "lastRunAt": 1794371984928,
+      "lastRunDurationMs": 1245,
+      "lastRunFramesExecuted": 221,
+      "lastRunStatus": "passed",
+      "name": "Vertical camera dead zone",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(90); // land + camera settle",
+        "let cam = harness.getCameraState('');",
+        "const startY = cam.y;",
+        "const p = harness.getObjects('Player')[0];",
+        "// Small jump: no camera movement",
+        "harness.setKeyPressed('Space', true);",
+        "await harness.stepFrames(10);",
+        "harness.setKeyPressed('Space', false);",
+        "await harness.stepFrames(60);",
+        "cam = harness.getCameraState('');",
+        "harness.assert(Math.abs(cam.y - startY) < 2, 'Small jump does not move camera Y (y=' + cam.y + ')');",
+        "// High platform B: camera moves UP, clamped at 310",
+        "harness.setObjectPosition(p.id, 1150, 100);",
+        "await harness.stepFrames(30);",
+        "cam = harness.getCameraState('');",
+        "harness.assert(cam.y < startY - 20, 'Camera moved UP (y=' + Math.round(cam.y) + ')');",
+        "harness.assert(cam.y >= 309 && cam.y <= 311, 'Clamped at upper bound 310 (y=' + cam.y + ')');",
+        "// Floor: camera back DOWN, clamped at 400",
+        "harness.setObjectPosition(p.id, 400, 470);",
+        "await harness.stepFrames(30);",
+        "cam = harness.getCameraState('');",
+        "harness.assert(cam.y >= startY - 2 && cam.y <= 401, 'Back at lower bound 400 on the floor (y=' + cam.y + ')');",
+        "// Horizontal unchanged",
+        "const low = harness.getObjects('Player')[0];",
+        "harness.assert(Math.abs(cam.x - Math.min(Math.max(low.centerX, 480), 1580)) < 3, 'Horizontal follow unchanged (x=' + Math.round(cam.x) + ')');",
+        "// HUD fixed",
+        "const hud = harness.getObjects('BatteryText')[0];",
+        "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
+        "await harness.takeScreenshot('highest platform framing');"
+      ]
+    },
+    {
+      "description": "Smoothed camera: direction changes, full jump arc from highest platform fully visible, descent, boundaries, HUD.",
+      "lastRunAt": 1794375104428,
+      "lastRunDurationMs": 611,
+      "lastRunFramesExecuted": 617,
+      "lastRunStatus": "passed",
+      "name": "Smoothed camera and jump arc visibility",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(90);",
+        "// 1. Direction change test mid-level: teleport to x=600 first, walk right then left",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p.id, 600, 400);",
+        "await harness.stepFrames(40);",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(20);",
+        "const camAfterRight = harness.getCameraState('').x;",
+        "harness.setKeyPressed('Left', true);",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('Left', false);",
+        "await harness.stepFrames(20);",
+        "const camAfterLeft = harness.getCameraState('').x;",
+        "harness.assert(camAfterRight > 600, 'Camera followed right (x=' + Math.round(camAfterRight) + ')');",
+        "harness.assert(camAfterLeft < camAfterRight, 'Camera moved back left after direction change (right=' + Math.round(camAfterRight) + ', left=' + Math.round(camAfterLeft) + ')');",
+        "// No abrupt snapping while converging",
+        "let prev = null, maxJump = 0;",
+        "for (let i = 0; i < 20; i++) {",
+        "  await harness.stepFrames(1);",
+        "  const cx = harness.getCameraState('').x;",
+        "  if (prev !== null) maxJump = Math.max(maxJump, Math.abs(cx - prev));",
+        "  prev = cx;",
+        "}",
+        "harness.assert(maxJump < 12, 'No abrupt horizontal snapping (max per-frame move=' + maxJump.toFixed(1) + 'px)');",
+        "// 2. Full jump arc from the highest platform B: entire sprite stays visible",
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(10);",
+        "const p2 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p2.id, 1100, 60); // land on B (top 190)",
+        "await harness.stepFrames(40);",
+        "let minY = 9999, minVisibleTop = 9999;",
+        "harness.setKeyPressed('Space', true);",
+        "for (let i = 0; i < 75; i++) {",
+        "  await harness.stepFrames(1);",
+        "  const q = harness.getObjects('Player')[0];",
+        "  const c = harness.getCameraState('');",
+        "  const topOnScreen = q.centerY - q.height / 2 - (c.y - 270);",
+        "  minY = Math.min(minY, q.y);",
+        "  minVisibleTop = Math.min(minVisibleTop, topOnScreen);",
+        "}",
+        "harness.setKeyPressed('Space', false);",
+        "console.log('apex player y=' + Math.round(minY) + ', best sprite-top screen y=' + Math.round(minVisibleTop));",
+        "harness.assert(minY < 60, 'Player reached the full jump arc above platform B (min y=' + Math.round(minY) + ')');",
+        "harness.assert(minVisibleTop >= 0, 'ENTIRE sprite stayed on screen at apex (best sprite-top screen y=' + Math.round(minVisibleTop) + 'px)');",
+        "// 3. Landing on B, then descending to the floor: camera returns down, bounds respected",
+        "await harness.stepFrames(60);",
+        "const c2 = harness.getCameraState('');",
+        "const q2 = harness.getObjects('Player')[0];",
+        "harness.assert(q2.behaviors.PlatformerObject.state.IsOnFloor === true, 'Player landed back on B');",
+        "harness.setObjectPosition(q2.id, 400, 400);",
+        "await harness.stepFrames(60);",
+        "const c3 = harness.getCameraState('');",
+        "harness.assert(c3.y > c2.y, 'Camera descended (y ' + Math.round(c2.y) + ' -> ' + Math.round(c3.y) + ')');",
+        "harness.assert(c3.y <= 401, 'Lower bound 400 respected (y=' + c3.y + ')');",
+        "// 4. Far right end: horizontal boundary preserved",
+        "const p4 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p4.id, 1840, 300);",
+        "await harness.stepFrames(60);",
+        "const c4 = harness.getCameraState('');",
+        "harness.assert(Math.abs(c4.x - 1580) < 15, 'Right horizontal boundary ~1580 preserved (x=' + Math.round(c4.x) + ')');",
+        "// 5. HUD fixed",
+        "const hud = harness.getObjects('BatteryText')[0];",
+        "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
+        "await harness.takeScreenshot('after jump arc from highest platform');"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -5549,6 +6043,18 @@
       },
       {
         "itemName": "Energy pickup collection"
+      },
+      {
+        "itemName": "Level traversal to generator platform"
+      },
+      {
+        "itemName": "Camera follow and HUD"
+      },
+      {
+        "itemName": "Vertical camera dead zone"
+      },
+      {
+        "itemName": "Smoothed camera and jump arc visibility"
       }
     ]
   },
