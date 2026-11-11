@@ -922,6 +922,18 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter/PNG/Power-ups/8db79b936e645ce01c61d826d7c972a59414b6b2a12014ec8105099bf7f1514f_Bolt Red Powerup.png",
           "name": "Bolt Red Powerup.png"
         }
+      },
+      {
+        "file": "assets/Grey tank 1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Grey tank 1.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/Vehicle/72f2d82827ab024efab8e090fc17b6bc5161adbbf554d50d0bd614b29f50f3c2_Grey tank 1.png",
+          "name": "Grey tank 1.png"
+        }
       }
     ]
   },
@@ -1134,6 +1146,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Generator",
+          "persistentUuid": "5cf95031-4fb0-4202-9db9-1f8e7e8214b6",
+          "width": 0,
+          "x": 1750,
+          "y": 264,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1148,9 +1176,9 @@
           "effects": [],
           "behaviors": [
             {
-              "jumpSpeed": 700,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "jumpSpeed": 700,
               "ignoreDefaultControls": true,
               "acceleration": 1500,
               "canGoDownFromJumpthru": true,
@@ -4417,6 +4445,67 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "319330bfc0b6e4922e40d295a24236290886d11cca33df3bb5b26c0068c96aeb",
+          "name": "Generator",
+          "persistentUuid": "e249ccb2-5bc3-417f-b911-2605c7ea05c4",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Grey tank 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 171,
+                            "y": 0
+                          },
+                          {
+                            "x": 171,
+                            "y": 136
+                          },
+                          {
+                            "x": 0,
+                            "y": 136
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4433,6 +4522,9 @@
           },
           {
             "objectName": "EnergyPickup"
+          },
+          {
+            "objectName": "Generator"
           }
         ]
       },
@@ -5335,6 +5427,59 @@
               ]
             }
           ]
+        },
+        {
+          "aiGeneratedEventId": "01M76DMHEWKVC2JDHZJ73ZSPTK",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "VICTORY - reach the generator with battery remaining"
+        },
+        {
+          "aiGeneratedEventId": "01M76DMHEWKVC2JDHZJ73ZSPTK",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Generator",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Victory\"",
+                "no"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -5655,6 +5800,299 @@
           "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
+    },
+    {
+      "b": 24,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Victory",
+      "name": "Victory",
+      "r": 16,
+      "renderer3DWorldScale": 100,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 16,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.7291666666666666,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "VictoryTitle",
+          "persistentUuid": "0a64867e-8d1a-4d71-bb4b-2a5ab303de94",
+          "width": 800,
+          "x": 80,
+          "y": 190,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "VictorySubtitle",
+          "persistentUuid": "8fd162b7-7af2-4dce-b6a5-f75861c4e597",
+          "width": 800,
+          "x": 80,
+          "y": 285,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "VictoryTitle",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "POWER RESTORED",
+          "font": "",
+          "textAlignment": "center",
+          "characterSize": 56,
+          "color": {
+            "b": 120,
+            "g": 230,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "POWER RESTORED",
+            "font": "",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 56,
+            "lineHeight": 0,
+            "color": "255;230;120"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VictorySubtitle",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "You kept the last spark alive.",
+          "font": "",
+          "textAlignment": "center",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 245,
+            "r": 235
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "You kept the last spark alive.",
+            "font": "",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "235;245;255"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "VictoryTitle"
+          },
+          {
+            "objectName": "VictorySubtitle"
+          }
+        ]
+      },
+      "events": [],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300,
+                "shadowDistance": 2000,
+                "shadowNormalBias": 1
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "shadowRenderingMode": "fittedToCameraView",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300,
+                "shadowDistance": 2000,
+                "shadowNormalBias": 1
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "shadowRenderingMode": "fittedToCameraView",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": []
     }
   ],
   "layoutsFolderStructure": {
@@ -5665,6 +6103,9 @@
       },
       {
         "itemName": "GameOver"
+      },
+      {
+        "itemName": "Victory"
       }
     ]
   },
@@ -6030,6 +6471,51 @@
         "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
         "await harness.takeScreenshot('after jump arc from highest platform');"
       ]
+    },
+    {
+      "description": "Generator reachable, victory on touch with battery, Victory scene texts, GameOver path intact.",
+      "lastRunAt": 1794438339240,
+      "lastRunDurationMs": 823,
+      "lastRunFramesExecuted": 354,
+      "lastRunStatus": "passed",
+      "name": "Generator victory objective",
+      "type": "gameplay",
+      "source": [
+        "// A) Player reaches the Generator with normal movement and victory triggers",
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "const gen = harness.getObjects('Generator')[0];",
+        "harness.assert(!!gen, 'Generator exists in Level01');",
+        "console.log('Generator at x=' + Math.round(gen.x) + ' y=' + Math.round(gen.y) + ' bottom=' + Math.round(gen.y + gen.height));",
+        "// Drop the player on the final platform (starts x=1620), left of the generator (x=1750)",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p.id, 1630, 280);",
+        "await harness.stepFrames(40);",
+        "const landed = harness.getObjects('Player')[0];",
+        "harness.assert(landed.behaviors.PlatformerObject.state.IsOnFloor === true, 'Player standing on final platform (bottom=' + Math.round(landed.y + landed.height) + ')');",
+        "harness.setKeyPressed('Right', true);",
+        "let won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "harness.assert(won, 'Touching Generator with Battery > 0 changed to Victory scene');",
+        "// B) Victory displays both texts",
+        "await harness.stepFrames(10);",
+        "const title = harness.getObjects('VictoryTitle')[0];",
+        "const sub = harness.getObjects('VictorySubtitle')[0];",
+        "harness.assert(title && title.text === 'POWER RESTORED', 'Victory title text present');",
+        "harness.assert(sub && sub.text === 'You kept the last spark alive.', 'Victory subtitle text present');",
+        "harness.assert(title && !title.hidden && sub && !sub.hidden, 'Both victory texts visible');",
+        "await harness.takeScreenshot('victory scene');",
+        "// C) Battery depletion without touching Generator still leads to GameOver",
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(10);",
+        "harness.setSceneVariable('Battery', 2);",
+        "const p2 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p2.id, 200, 400);",
+        "await harness.stepFrames(10);",
+        "let over = await harness.stepUntil(() => harness.getSceneName() === 'GameOver', { maxFrames: 600 });",
+        "harness.assert(over, 'Battery depletion without generator leads to GameOver');",
+        "await harness.takeScreenshot('game over still works');"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -6055,6 +6541,9 @@
       },
       {
         "itemName": "Smoothed camera and jump arc visibility"
+      },
+      {
+        "itemName": "Generator victory objective"
       }
     ]
   },
