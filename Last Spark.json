@@ -910,6 +910,18 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/3bd40ac788d44626fd640ec67ef04ab0364816b5e8c831f2077bff8805cfe689_Roboto-Bold.ttf",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "file": "assets/Bolt Red Powerup.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Bolt Red Powerup.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter/PNG/Power-ups/8db79b936e645ce01c61d826d7c972a59414b6b2a12014ec8105099bf7f1514f_Bolt Red Powerup.png",
+          "name": "Bolt Red Powerup.png"
+        }
       }
     ]
   },
@@ -1030,6 +1042,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "EnergyPickup",
+          "persistentUuid": "e1b4e2ba-f5fc-4fd8-96f1-bc0692dce01a",
+          "width": 0,
+          "x": 625,
+          "y": 287,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1044,7 +1072,7 @@
           "effects": [],
           "behaviors": [
             {
-              "isFolded": true,
+              "jumpSpeed": 800,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "ignoreDefaultControls": true,
@@ -1054,7 +1082,6 @@
               "canGrabWithoutMoving": true,
               "deceleration": 1500,
               "gravity": 1000,
-              "jumpSpeed": 600,
               "jumpSustainTime": 0.2,
               "ladderClimbingSpeed": 150,
               "maxFallingSpeed": 700,
@@ -4253,6 +4280,67 @@
             "lineHeight": 0,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "631abf7a0b2d3171e700e76538e00eb0e65fcbdd7837984d99a336564a3f136d",
+          "name": "EnergyPickup",
+          "persistentUuid": "8f15f045-c599-4a71-9c67-66fc9a2fe1ba",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Bolt Red Powerup.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 33
+                          },
+                          {
+                            "x": 0,
+                            "y": 33
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4266,6 +4354,9 @@
           },
           {
             "objectName": "BatteryText"
+          },
+          {
+            "objectName": "EnergyPickup"
           }
         ]
       },
@@ -4738,18 +4829,6 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "BATTERY - Battery delplation Logic"
-        },
-        {
           "aiGeneratedEventId": "01M73HQ80J8ARRMRD9QZA24A3Z",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
@@ -4917,6 +4996,68 @@
               "parameters": [
                 "",
                 "\"GameOver\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M73W4MGRNWV61NF8Q0XPR9FF",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "BATTERY - EnergyPickup collect: recharge +20, capped at 100, then remove the pickup"
+        },
+        {
+          "aiGeneratedEventId": "01M73W4MGRNWV61NF8Q0XPR9FF",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "EnergyPickup",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                "+",
+                "20"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                "=",
+                "min(100, Battery)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "EnergyPickup",
                 ""
               ]
             }
@@ -5359,6 +5500,42 @@
         "harness.assert(runSpeed > walkSpeed * 1.2, 'Sprint is faster: walk ' + walkSpeed.toFixed(0) + ' px/s vs run ' + runSpeed.toFixed(0) + ' px/s');",
         "await harness.takeScreenshot('animation states');"
       ]
+    },
+    {
+      "description": "EnergyPickup is reachable, collected on collision, recharges Battery by 20 capped at 100.",
+      "lastRunAt": 1794352831205,
+      "lastRunDurationMs": 271,
+      "lastRunFramesExecuted": 38,
+      "lastRunStatus": "passed",
+      "name": "Energy pickup collection",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "let pickup = harness.getObjects('EnergyPickup')[0];",
+        "harness.assert(!!pickup, 'EnergyPickup exists in Level01');",
+        "harness.assert(pickup.y > 280 && pickup.y < 340, 'EnergyPickup sits just above the platform (top y=' + pickup.y + ')');",
+        "// Arrange: drop the player just left of the pickup, above the platform, so it lands on it",
+        "const player = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(player.id, 500, 200);",
+        "await harness.stepFrames(5);",
+        "harness.setObjectPosition(player.id, 560, 200); // just left of the pickup (pickup x=625)",
+        "let landed = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  return p.y >= 180 && p.y <= 330; // standing on platform top (326 - height 124 = ~202)",
+        "}, { maxFrames: 300 });",
+        "harness.assert(landed, 'Player landed on the floating platform (y=' + harness.getObjects('Player')[0].y + ')');",
+        "// Walk right into the pickup",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => harness.getObjects('EnergyPickup').length === 0, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "harness.stepFrames(10);",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 0, 'EnergyPickup was collected (deleted)');",
+        "const battery = harness.getSceneVariable('Battery');",
+        "harness.assert(battery && Number(battery.value) >= 20, 'Battery increased from pickup (value=' + (battery && battery.value) + ')');",
+        "harness.assert(battery && Number(battery.value) <= 100, 'Battery never exceeds 100 (value=' + (battery && battery.value) + ')');",
+        "await harness.takeScreenshot('after collection');"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -5369,6 +5546,9 @@
       },
       {
         "itemName": "Player animation states"
+      },
+      {
+        "itemName": "Energy pickup collection"
       }
     ]
   },
