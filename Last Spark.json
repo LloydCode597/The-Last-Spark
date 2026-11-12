@@ -934,6 +934,38 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/Vehicle/72f2d82827ab024efab8e090fc17b6bc5161adbbf554d50d0bd614b29f50f3c2_Grey tank 1.png",
           "name": "Grey tank 1.png"
         }
+      },
+      {
+        "file": "assets/Blank Button White_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Blank Button White_Pressed.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Interface/32x32 Pixel Arcade Stick and Buttons/f621ac7906f85e727087c0a01747b2250bed4b520c2b4b2d80759ade57e426f7_Blank Button White_Pressed.png",
+          "name": "Blank Button White_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/Blank Button White_Unpressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Blank Button White_Unpressed.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Interface/32x32 Pixel Arcade Stick and Buttons/38d85ff526274d68e0a345fc35a8ff948c306644b65043670466e394c85c8ab0_Blank Button White_Unpressed.png",
+          "name": "Blank Button White_Unpressed.png"
+        }
+      },
+      {
+        "file": "LAST SPARK Generator.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LAST SPARK Generator.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -967,7 +999,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6601120098331863,
+        "zoomFactor": 0.5592453043678762,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1149,15 +1181,50 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 116,
           "keepRatio": true,
           "layer": "",
           "name": "Generator",
           "persistentUuid": "5cf95031-4fb0-4202-9db9-1f8e7e8214b6",
-          "width": 0,
-          "x": 1750,
-          "y": 264,
+          "width": 174,
+          "x": 1748,
+          "y": 301,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 70,
+          "keepRatio": true,
+          "layer": "",
+          "name": "GeneratorTrigger",
+          "opacity": 0,
+          "persistentUuid": "ca8559ae-683c-4bed-9231-6d488bbdc885",
+          "width": 45,
+          "x": 1700,
+          "y": 330,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 30,
+          "hidden": true,
+          "keepRatio": true,
+          "layer": "",
+          "name": "GeneratorPrompt",
+          "persistentUuid": "366f65bd-782b-4dfd-80aa-5bcac2139906",
+          "width": 260,
+          "x": 1560,
+          "y": 240,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -4467,7 +4534,68 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Grey tank 1.png",
+                      "image": "LAST SPARK Generator.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 79,
+                            "y": 50
+                          },
+                          {
+                            "x": 1442,
+                            "y": 50
+                          },
+                          {
+                            "x": 1442,
+                            "y": 931
+                          },
+                          {
+                            "x": 79,
+                            "y": 931
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "8dc6ead38f64f162322abbad35d1c01384f698e208198e8ad8e5668ef9304b78",
+          "name": "GeneratorTrigger",
+          "persistentUuid": "05c610a6-65b5-4ba4-ab21-56f20620e691",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Blank Button White_Pressed.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4484,19 +4612,67 @@
                         [
                           {
                             "x": 0,
-                            "y": 0
+                            "y": 7
                           },
                           {
-                            "x": 171,
-                            "y": 0
+                            "x": 32,
+                            "y": 7
                           },
                           {
-                            "x": 171,
-                            "y": 136
+                            "x": 32,
+                            "y": 32
                           },
                           {
                             "x": 0,
-                            "y": 136
+                            "y": 32
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Unpressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Blank Button White_Unpressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 7
+                          },
+                          {
+                            "x": 32,
+                            "y": 7
+                          },
+                          {
+                            "x": 32,
+                            "y": 32
+                          },
+                          {
+                            "x": 0,
+                            "y": 32
                           }
                         ]
                       ]
@@ -4506,6 +4682,50 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "GeneratorPrompt",
+          "persistentUuid": "85f89b87-a7c3-46d1-9c4d-ab20c2a390a2",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Press E to restore power",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 120,
+            "g": 230,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Press E to restore power",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "255;230;120"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -4525,6 +4745,12 @@
           },
           {
             "objectName": "Generator"
+          },
+          {
+            "objectName": "GeneratorTrigger"
+          },
+          {
+            "objectName": "GeneratorPrompt"
           }
         ]
       },
@@ -5429,7 +5655,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M76DMHEWKVC2JDHZJ73ZSPTK",
+          "aiGeneratedEventId": "01M76GC63XZB62RD8CBB38E2SW",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -5439,10 +5665,10 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "VICTORY - reach the generator with battery remaining"
+          "comment": "VICTORY - interact with the generator: E key inside the trigger zone with battery remaining"
         },
         {
-          "aiGeneratedEventId": "01M76DMHEWKVC2JDHZJ73ZSPTK",
+          "aiGeneratedEventId": "01M76GC63XZB62RD8CBB38E2SW",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5451,7 +5677,62 @@
               },
               "parameters": [
                 "Player",
-                "Generator",
+                "GeneratorTrigger",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Battery",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"e\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Victory\"",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M76GC63XZB62RD8CBB38E2SW",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "GeneratorTrigger",
                 "",
                 "",
                 ""
@@ -5471,12 +5752,58 @@
           "actions": [
             {
               "type": {
-                "value": "Scene"
+                "value": "Show"
               },
               "parameters": [
-                "",
-                "\"Victory\"",
-                "no"
+                "GeneratorPrompt",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M76M1348RY9Q6QKW17BFR081",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Player",
+                    "GeneratorTrigger",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Battery",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "GeneratorPrompt"
               ]
             }
           ]
@@ -5871,6 +6198,7 @@
           "bold": true,
           "italic": false,
           "name": "VictoryTitle",
+          "persistentUuid": "6950e74f-c999-477e-a562-922e9fd5677d",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
@@ -5914,6 +6242,7 @@
           "bold": false,
           "italic": false,
           "name": "VictorySubtitle",
+          "persistentUuid": "e5d315fa-ecf1-4be9-b664-7a4330d773c5",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
@@ -6092,7 +6421,24 @@
           ]
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        }
+      ]
     }
   ],
   "layoutsFolderStructure": {
@@ -6516,6 +6862,136 @@
         "harness.assert(over, 'Battery depletion without generator leads to GameOver');",
         "await harness.takeScreenshot('game over still works');"
       ]
+    },
+    {
+      "description": "Generator interaction: no auto-victory, E-key only inside zone, prompt visibility, GameOver intact.",
+      "lastRunAt": 1794441137150,
+      "lastRunDurationMs": 1233,
+      "lastRunFramesExecuted": 610,
+      "lastRunStatus": "passed",
+      "name": "Generator interaction trigger",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p.id, 1630, 280);",
+        "await harness.stepFrames(40);",
+        "const landed = harness.getObjects('Player')[0];",
+        "harness.assert(landed.behaviors.PlatformerObject.state.IsOnFloor === true, 'Player standing on final platform');",
+        "// 1. Walking into/past the generator does NOT auto-trigger victory",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('Right', false);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'No automatic victory on approach/collision (scene=' + harness.getSceneName() + ')');",
+        "// 2. Jumping near/above the generator does not trigger",
+        "harness.setKeyPressed('Space', true);",
+        "await harness.stepFrames(15);",
+        "harness.setKeyPressed('Space', false);",
+        "await harness.stepFrames(60);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'No victory from jumping near the generator');",
+        "// 3. Walk back into the trigger zone (1700-1745) and check the prompt",
+        "harness.setKeyPressed('Left', true);",
+        "await harness.stepUntil(() => {",
+        "  const q = harness.getObjects('Player')[0];",
+        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Left', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'Still no auto-victory inside the zone');",
+        "const prompt = harness.getObjects('GeneratorPrompt')[0];",
+        "harness.assert(prompt && !prompt.hidden, 'Prompt visible while in the interaction zone');",
+        "// 4. Pressing E outside the zone does nothing",
+        "harness.setObjectPosition(p.id, 1625, 280); // on platform, left of trigger",
+        "await harness.stepFrames(40);",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(5);",
+        "harness.setKeyPressed('e', false);",
+        "await harness.stepFrames(20);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'Pressing E outside the zone does nothing');",
+        "harness.assert(harness.getObjects('GeneratorPrompt')[0].hidden, 'Prompt hidden outside the zone');",
+        "// 5. Pressing E inside the zone with Battery > 0 triggers Victory",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => {",
+        "  const q = harness.getObjects('Player')[0];",
+        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, 'Prompt visible again inside the zone');",
+        "harness.setKeyPressed('e', true);",
+        "let won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 120 });",
+        "harness.setKeyPressed('e', false);",
+        "harness.assert(won, 'E inside the zone with Battery > 0 triggers Victory');",
+        "await harness.takeScreenshot('victory via E');",
+        "// 6. Battery depletion still leads to GameOver",
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(10);",
+        "harness.setSceneVariable('Battery', 2);",
+        "const p2 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p2.id, 200, 400);",
+        "await harness.stepFrames(10);",
+        "let over = await harness.stepUntil(() => harness.getSceneName() === 'GameOver', { maxFrames: 600 });",
+        "harness.assert(over, 'Battery depletion still leads to GameOver');"
+      ]
+    },
+    {
+      "description": "Prompt hides when leaving the zone OR battery empty; E interaction still gated correctly.",
+      "lastRunAt": 1794444980474,
+      "lastRunDurationMs": 464,
+      "lastRunFramesExecuted": 176,
+      "lastRunStatus": "passed",
+      "name": "Generator prompt visibility",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p.id, 1630, 280);",
+        "await harness.stepFrames(40);",
+        "// 1. Walk into the zone: prompt appears",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => {",
+        "  const q = harness.getObjects('Player')[0];",
+        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, '1. Prompt appears inside the zone with Battery > 0');",
+        "// 2. Leave the zone entirely (main floor, far away): prompt disappears",
+        "harness.setObjectPosition(p.id, 400, 400);",
+        "await harness.stepFrames(15);",
+        "harness.assert(harness.getObjects('GeneratorPrompt')[0].hidden, '2. Prompt disappears when the Player leaves the zone');",
+        "// 3. Return to the zone, then drain Battery to 0 while staying inside: prompt must hide",
+        "harness.setObjectPosition(p.id, 1630, 280);",
+        "await harness.stepFrames(30);",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => {",
+        "  const q = harness.getObjects('Player')[0];",
+        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, '3a. Prompt visible again inside the zone');",
+        "harness.setSceneVariable('Battery', 0);",
+        "await harness.stepFrames(10);",
+        "harness.assert(harness.getObjects('GeneratorPrompt')[0].hidden, '3b. Prompt hidden when Battery = 0 even inside the zone');",
+        "// 4. E inside the zone with Battery = 0 does NOT trigger victory",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(5);",
+        "harness.setKeyPressed('e', false);",
+        "await harness.stepFrames(20);",
+        "harness.assert(harness.getSceneName() === 'Level01', '4a. E with Battery = 0 does not trigger Victory');",
+        "// Restore battery, still inside the zone: prompt returns and E triggers Victory",
+        "harness.setSceneVariable('Battery', 50);",
+        "await harness.stepFrames(10);",
+        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, '4b. Prompt returns when Battery > 0 inside the zone');",
+        "harness.setKeyPressed('e', true);",
+        "let won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 120 });",
+        "harness.setKeyPressed('e', false);",
+        "harness.assert(won, '4c. E inside the zone with Battery > 0 triggers Victory');",
+        "await harness.takeScreenshot('victory after prompt logic fix');"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -6544,6 +7020,12 @@
       },
       {
         "itemName": "Generator victory objective"
+      },
+      {
+        "itemName": "Generator interaction trigger"
+      },
+      {
+        "itemName": "Generator prompt visibility"
       }
     ]
   },
