@@ -966,6 +966,30 @@
         "name": "LAST SPARK Generator.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "LAST SPARK Background.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LAST SPARK Background.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "LAST SPARK Background (1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LAST SPARK Background (1).png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "LAST SPARK Background (1)2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LAST SPARK Background (1)2.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -977,16 +1001,16 @@
   "variables": [],
   "layouts": [
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Level01",
       "name": "Level01",
-      "r": 247,
+      "r": 14,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 20,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -999,7 +1023,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5975970727213824,
+        "zoomFactor": 0.3078557784696658,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1258,6 +1282,22 @@
           "x": 1430,
           "y": 221,
           "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 810,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "PowerStationBackground",
+          "persistentUuid": "c3160397-cc57-486b-93c9-a4813dd22d56",
+          "width": 2430,
+          "x": -185,
+          "y": -140,
+          "zOrder": -1000,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4758,6 +4798,67 @@
             "lineHeight": 0,
             "color": "255;230;120"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "PowerStationBackground",
+          "persistentUuid": "ec8dae82-3899-4093-8b10-b37d3f83ad43",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "LAST SPARK Background (1)2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 2172,
+                            "y": 0
+                          },
+                          {
+                            "x": 2172,
+                            "y": 724
+                          },
+                          {
+                            "x": 0,
+                            "y": 724
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4783,6 +4884,9 @@
           },
           {
             "objectName": "GeneratorPrompt"
+          },
+          {
+            "objectName": "PowerStationBackground"
           }
         ]
       },
@@ -5839,9 +5943,71 @@
               ]
             }
           ]
+        },
+        {
+          "aiGeneratedEventId": "01M79170EZKA8RF7QHV2CZ8SFQ",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Background layer: mirror the gameplay camera so the world-space background stays aligned (no gameplay camera change)."
+        },
+        {
+          "aiGeneratedEventId": "01M79170EZKA8RF7QHV2CZ8SFQ",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterX(\"\", 0)",
+                "\"Background\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterY(\"\", 0)",
+                "\"Background\"",
+                "0"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Background",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        },
         {
           "ambientLightColorB": 200,
           "ambientLightColorG": 200,
@@ -6700,9 +6866,9 @@
     },
     {
       "description": "Camera follows Player horizontally with clamped bounds; HUD stays on fixed UI layer.",
-      "lastRunAt": 1794362702930,
-      "lastRunDurationMs": 549,
-      "lastRunFramesExecuted": 71,
+      "lastRunAt": 1794525995466,
+      "lastRunDurationMs": 606,
+      "lastRunFramesExecuted": 151,
       "lastRunStatus": "passed",
       "name": "Camera follow and HUD",
       "type": "gameplay",
@@ -6713,22 +6879,27 @@
         "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText visible on UI layer');",
         "let cam = harness.getCameraState('');",
         "harness.assert(Math.abs(cam.x - 480) < 2, 'Camera clamped at left boundary (x=' + cam.x + ')');",
-        "harness.assert(Math.abs(cam.y - 380) < 2, 'Camera Y fixed at 380 (y=' + cam.y + ')');",
+        "harness.assert(Math.abs(cam.y - 400) < 2, 'Camera Y starts at 400 (y=' + cam.y + ')');",
         "// Move player to middle of level: camera should follow freely (no clamp in 480..1580)",
         "const p = harness.getObjects('Player')[0];",
         "harness.setObjectPosition(p.id, 1100, 60);",
-        "await harness.stepFrames(20);",
+        "const followed = await harness.stepUntil(() => {",
+        "  const c = harness.getCameraState('');",
+        "  const pl = harness.getObjects('Player')[0];",
+        "  return Math.abs(c.x - pl.centerX) < 3;",
+        "}, { maxFrames: 120 });",
         "cam = harness.getCameraState('');",
         "const mid = harness.getObjects('Player')[0];",
-        "harness.assert(Math.abs(cam.x - mid.centerX) < 2, 'Camera follows player in the middle (cam.x=' + Math.round(cam.x) + ', center=' + Math.round(mid.centerX) + ')');",
-        "harness.assert(Math.abs(cam.y - 380) < 2, 'Camera Y still fixed while player is high (y=' + cam.y + ')');",
+        "harness.assert(followed, 'Camera follows player in the middle (cam.x=' + Math.round(cam.x) + ', center=' + Math.round(mid.centerX) + ')');",
+        "harness.assert(cam.y >= 130 && cam.y <= 400, 'Camera Y stays inside its clamped range (y=' + cam.y.toFixed(0) + ')');",
         "// Move to the far right: camera clamps at 1580",
         "harness.setObjectPosition(p.id, 1840, 300);",
-        "await harness.stepFrames(20);",
+        "await harness.stepFrames(90);",
         "cam = harness.getCameraState('');",
         "harness.assert(Math.abs(cam.x - 1580) < 2, 'Camera clamped at right boundary 2060-480=1580 (x=' + Math.round(cam.x) + ')');",
         "harness.assert(!harness.getObjects('BatteryText')[0].hidden, 'BatteryText still visible after scroll');",
-        "await harness.takeScreenshot('camera at final platform');"
+        "await harness.takeScreenshot('camera at final platform');",
+        ""
       ]
     },
     {
@@ -6897,8 +7068,8 @@
     },
     {
       "description": "Generator interaction: no auto-victory, E-key only inside zone, prompt visibility, GameOver intact.",
-      "lastRunAt": 1794441137150,
-      "lastRunDurationMs": 1233,
+      "lastRunAt": 1794525934376,
+      "lastRunDurationMs": 1268,
       "lastRunFramesExecuted": 610,
       "lastRunStatus": "passed",
       "name": "Generator interaction trigger",
@@ -7087,6 +7258,129 @@
         "harness.assert(won, 'Generator interaction and Victory still work');",
         "await harness.takeScreenshot('victory after collecting all pickups');"
       ]
+    },
+    {
+      "description": "Dark background applied; pickups and victory unaffected.",
+      "lastRunAt": 1794525931970,
+      "lastRunDurationMs": 829,
+      "lastRunFramesExecuted": 109,
+      "lastRunStatus": "passed",
+      "name": "Industrial background color",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(30);",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 3, 'Three pickups present');",
+        "const p = harness.getObjects('Player')[0];",
+        "// Collect ONLY the original pickup: place player just left of it on the floating platform",
+        "harness.setObjectPosition(p.id, 560, 200);",
+        "await harness.stepFrames(30);",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => harness.getObjects('EnergyPickup').length === 2, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "console.log('after pickup1: count=' + harness.getObjects('EnergyPickup').length + ' battery=' + harness.getSceneVariable('Battery').value);",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 2, 'Exactly one pickup collected, two remain');",
+        "const battery1 = Number(harness.getSceneVariable('Battery').value);",
+        "harness.assert(battery1 >= 20 && battery1 <= 100, 'Battery restored and capped (=' + battery1 + ')');",
+        "// Victory still works",
+        "harness.setObjectPosition(p.id, 1630, 280);",
+        "await harness.stepFrames(40);",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => {",
+        "  const q = harness.getObjects('Player')[0];",
+        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(5);",
+        "harness.setKeyPressed('e', true);",
+        "let won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 120 });",
+        "harness.setKeyPressed('e', false);",
+        "harness.assert(won, 'Victory still works after background change');",
+        "await harness.takeScreenshot('victory with dark background');"
+      ]
+    },
+    {
+      "description": "LAST SPARK background on dedicated Background layer covers the viewport at the start area, the highest platform and the generator chamber, follows the camera, and does not disturb gameplay.",
+      "lastRunAt": 1794525917609,
+      "lastRunDurationMs": 1007,
+      "lastRunFramesExecuted": 193,
+      "lastRunStatus": "passed",
+      "name": "Industrial background coverage",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(40);",
+        "",
+        "const bgList = harness.getObjects('PowerStationBackground');",
+        "harness.assert(bgList.length === 1, 'exactly one background instance (got ' + bgList.length + ')');",
+        "const bg0 = bgList[0];",
+        "harness.assert(bg0.layer === 'Background', 'background is on the Background layer (got \"' + bg0.layer + '\")');",
+        "harness.assert(bg0.hidden === false, 'background is visible');",
+        "harness.assert(bg0.x <= 0 && bg0.y <= -140, 'background extends past level/camera Y range (x=' + bg0.x + ', y=' + bg0.y + ')');",
+        "harness.assert(bg0.x + bg0.width >= 2060, 'background covers level X extent (' + (bg0.x + bg0.width) + ')');",
+        "harness.assert(bg0.y + bg0.height >= 670, 'background covers vertical camera range (' + (bg0.y + bg0.height) + ')');",
+        "harness.assert(bg0.width > 2400 && bg0.height > 800, 'background is scaled to the world (w=' + bg0.width + ', h=' + bg0.height + ')');",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 3, 'three energy pickups placed at scene start');",
+        "",
+        "// The background must not be pickable/collidable: it never moves or disappears while the player runs through it.",
+        "function checkCoverage(tag) {",
+        "  const cam = harness.getCameraState('');",
+        "  const bg = harness.getObjects('PowerStationBackground')[0];",
+        "  const zoom = cam.zoom || 1;",
+        "  const halfW = harness.getGameResolutionWidth() / (2 * zoom);",
+        "  const halfH = harness.getGameResolutionHeight() / (2 * zoom);",
+        "  harness.assert(bg.x <= cam.x - halfW && bg.x + bg.width >= cam.x + halfW,",
+        "    tag + ': background covers viewport X (cam.x=' + cam.x.toFixed(0) + ', bg ' + Math.round(bg.x) + '..' + Math.round(bg.x + bg.width) + ')');",
+        "  harness.assert(bg.y <= cam.y - halfH && bg.y + bg.height >= cam.y + halfH,",
+        "    tag + ': background covers viewport Y (cam.y=' + cam.y.toFixed(0) + ', bg ' + Math.round(bg.y) + '..' + Math.round(bg.y + bg.height) + ')');",
+        "  harness.assert(bg.x === -185 && bg.y === -140, tag + ': background keeps its world position (no parallax/drift)');",
+        "  const cb = harness.getCameraState('Background');",
+        "  harness.assert(!!cb && Math.abs(cb.x - cam.x) < 1 && Math.abs(cb.y - cam.y) < 1,",
+        "    tag + ': Background layer camera mirrors gameplay camera (bg cam ' + (cb && cb.x.toFixed(1)) + ',' + (cb && cb.y.toFixed(1)) + ' vs ' + cam.x.toFixed(1) + ',' + cam.y.toFixed(1) + ')');",
+        "}",
+        "",
+        "// --- 1. Starting area ---",
+        "await harness.stepFrames(20);",
+        "await harness.takeScreenshot('start area');",
+        "checkCoverage('start');",
+        "",
+        "// --- 2. Highest platform (top surface y=190, x 1080..1240) ---",
+        "const player = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(player.id, 1120, 40);",
+        "await harness.stepFrames(2);",
+        "const onHighest = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  const bh = p && p.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true;",
+        "}, { maxFrames: 400 });",
+        "harness.assert(onHighest, 'player landed on the highest platform');",
+        "await harness.stepFrames(40);",
+        "await harness.takeScreenshot('highest platform');",
+        "checkCoverage('highest platform');",
+        "",
+        "// --- 3. Generator chamber ---",
+        "harness.setObjectPosition(player.id, 1840, 300);",
+        "await harness.stepFrames(2);",
+        "await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  const bh = p && p.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true;",
+        "}, { maxFrames: 400 });",
+        "await harness.stepFrames(60);",
+        "await harness.takeScreenshot('generator chamber');",
+        "checkCoverage('generator chamber');",
+        "const camGen = harness.getCameraState('');",
+        "harness.assert(Math.abs(camGen.x - 1580) < 3, 'camera still clamped at right boundary 1580 (got ' + camGen.x.toFixed(0) + ')');",
+        "",
+        "// --- Gameplay untouched ---",
+        "harness.assert(harness.getObjects('EnergyPickup').length <= 3, 'energy pickups only removed by the player (never by the background)');",
+        "harness.assert(harness.getObjects('Generator').length === 1, 'generator still present');",
+        "const hud = harness.getObjects('BatteryText')[0];",
+        "harness.assert(!!hud && hud.layer === 'UI' && hud.hidden === false, 'HUD still visible on the UI layer');",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.assert(!!p && p.y < 500, 'player still standing on a platform (y=' + (p && p.y.toFixed(0)) + ')');",
+        ""
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -7124,6 +7418,12 @@
       },
       {
         "itemName": "Three energy pickups"
+      },
+      {
+        "itemName": "Industrial background color"
+      },
+      {
+        "itemName": "Industrial background coverage"
       }
     ]
   },
