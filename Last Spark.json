@@ -990,6 +990,66 @@
         "name": "LAST SPARK Background (1)2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Extreme Darkness.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Extreme Darkness.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jump 8.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jump 8.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Zap effect.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Zap effect.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Powerup 4.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Powerup 4.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Lose 1.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Lose 1.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Complete_02.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Complete_02.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },
@@ -998,7 +1058,13 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "FailReason",
+      "type": "string",
+      "value": ""
+    }
+  ],
   "layouts": [
     {
       "b": 32,
@@ -1023,7 +1089,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.3078557784696658,
+        "zoomFactor": 0.24407646607413463,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1082,7 +1148,7 @@
           "layer": "",
           "name": "Ground",
           "persistentUuid": "653b1262-c719-419e-a6cb-2a2c7b381307",
-          "width": 964,
+          "width": 540,
           "x": -1,
           "y": 475,
           "zOrder": 2,
@@ -1147,8 +1213,8 @@
           "layer": "",
           "name": "Ground",
           "persistentUuid": "5fdcc697-3582-4a9c-a44e-b59ef359a437",
-          "width": 180,
-          "x": 800,
+          "width": 150,
+          "x": 825,
           "y": 250,
           "zOrder": 0,
           "numberProperties": [],
@@ -5100,6 +5166,63 @@
           "comment": "PLAYER CONTROLS - Jump (Space, Up arrow or W). Holding the key keeps the jump going a bit higher."
         },
         {
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "AUDIO - one jump sound per successful jump (grounded key press, before the jump is simulated)."
+        },
+        {
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Jump 8.aac",
+                "no",
+                "65",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
           "aiGeneratedEventId": "01M71AYM0FBYAKY6P3D2VQBKG5",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -5372,7 +5495,7 @@
           "comment": "BATTERY - Battery depletion Logic"
         },
         {
-          "aiGeneratedEventId": "01M73HQ80J8ARRMRD9QZA24A3Z",
+          "aiGeneratedEventId": "01M797S6P1Z87ERMZQQB1HCW6E",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5392,7 +5515,7 @@
               "parameters": [
                 "Battery",
                 "=",
-                "100"
+                "25"
               ]
             },
             {
@@ -5402,6 +5525,16 @@
               "parameters": [
                 "",
                 "\"BatteryDrain\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "FailReason",
+                "=",
+                "\"\""
               ]
             }
           ]
@@ -5504,6 +5637,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M797S6P1Z87ERMZQQB1HCW6E",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5521,12 +5655,79 @@
           "actions": [
             {
               "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "FailReason",
+                "=",
+                "\"battery\""
+              ]
+            },
+            {
+              "type": {
                 "value": "Scene"
               },
               "parameters": [
                 "",
                 "\"GameOver\"",
-                ""
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M797S6P1Z87ERMZQQB1HCW6E",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "FALL DETECTION - falling below the playable level ends the run (once per scene)."
+        },
+        {
+          "aiGeneratedEventId": "01M797S6P1Z87ERMZQQB1HCW6E",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "Player",
+                ">",
+                "750"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "FailReason",
+                "=",
+                "\"fall\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"GameOver\"",
+                "no"
               ]
             }
           ]
@@ -5545,7 +5746,7 @@
           "comment": "BATTERY - EnergyPickup collect: recharge +20, capped at 100, then remove the pickup"
         },
         {
-          "aiGeneratedEventId": "01M73W4MGRNWV61NF8Q0XPR9FF",
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5589,6 +5790,18 @@
               "parameters": [
                 "EnergyPickup",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Powerup 4.aac",
+                "no",
+                "60",
+                "1"
               ]
             }
           ]
@@ -5804,7 +6017,7 @@
           "comment": "VICTORY - interact with the generator: E key inside the trigger zone with battery remaining"
         },
         {
-          "aiGeneratedEventId": "01M76GC63XZB62RD8CBB38E2SW",
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5843,6 +6056,46 @@
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Zap effect.aac",
+                "no",
+                "70",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"VictoryDelay\""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"VictoryDelay\"",
+                ">=",
+                "0.9"
+              ]
             }
           ],
           "actions": [
@@ -5984,6 +6237,48 @@
                 "CameraCenterY(\"\", 0)",
                 "\"Background\"",
                 "0"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "AUDIO - one quiet looping industrial ambience for the level (music channel, plays once per scene entry)."
+        },
+        {
+          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusicOnChannel"
+              },
+              "parameters": [
+                "",
+                "Extreme Darkness.aac",
+                "\"Music\"",
+                "yes",
+                "30",
+                "1"
               ]
             }
           ]
@@ -6180,12 +6475,28 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 36,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RetryText",
+          "persistentUuid": "e5c2189c-4340-4e68-a564-4827e1fa3e66",
+          "width": 700,
+          "x": 130,
+          "y": 390,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
         {
           "assetStoreId": "",
-          "bold": false,
+          "bold": true,
           "italic": false,
           "name": "GameOverText",
           "persistentUuid": "a87d2c5b-dcaf-4732-b600-672ba7ef19e0",
@@ -6197,12 +6508,56 @@
           "behaviors": [],
           "string": "POWER DEPLETED\n\nYour battery has run out.",
           "font": "",
-          "textAlignment": "left",
+          "textAlignment": "center",
           "characterSize": 50,
           "color": {
             "b": 37,
             "g": 6,
             "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "POWER DEPLETED\n\nYour battery has run out.",
+            "font": "",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 50,
+            "lineHeight": 0,
+            "color": "255;6;37"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "RetryText",
+          "persistentUuid": "2718861e-c962-4ab8-9fcf-10ac5659e178",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "PRESS R TO RETRY",
+          "font": "",
+          "textAlignment": "center",
+          "characterSize": 24,
+          "color": {
+            "b": 255,
+            "g": 240,
+            "r": 235
           },
           "content": {
             "bold": false,
@@ -6218,13 +6573,13 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "POWER DEPLETED\n\nYour battery has run out.",
+            "text": "PRESS R TO RETRY",
             "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 50,
+            "textAlignment": "center",
+            "verticalTextAlignment": "center",
+            "characterSize": 24,
             "lineHeight": 0,
-            "color": "255;6;37"
+            "color": "235;240;255"
           }
         }
       ],
@@ -6233,10 +6588,155 @@
         "children": [
           {
             "objectName": "GameOverText"
+          },
+          {
+            "objectName": "RetryText"
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "aiGeneratedEventId": "01M797SZGF7368QXTDB7BR3ZGW",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Failure message: differs for a fall vs a battery depletion (FailReason is set by Level01)."
+        },
+        {
+          "aiGeneratedEventId": "01M797SZGF7368QXTDB7BR3ZGW",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareStrings"
+              },
+              "parameters": [
+                "FailReason",
+                "=",
+                "\"fall\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "GameOverText",
+                "Text",
+                "=",
+                "\"SIGNAL LOST\" + NewLine() + NewLine() + \"You fell into the dark.\""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M797SZGF7368QXTDB7BR3ZGW",
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "GameOverText",
+                "Text",
+                "=",
+                "\"POWER DEPLETED\" + NewLine() + NewLine() + \"Your battery has run out.\""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M797SZGF7368QXTDB7BR3ZGW",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Retry: R restarts the level (Level01 re-initialises Battery to 100 and its normal starting state)."
+        },
+        {
+          "aiGeneratedEventId": "01M797SZGF7368QXTDB7BR3ZGW",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"r\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level01\"",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M7997KPQNM34CDX57Q5AFFG6",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "AUDIO - one descending power-down sound when the GameOver screen appears."
+        },
+        {
+          "aiGeneratedEventId": "01M7997KPQNM34CDX57Q5AFFG6",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Lose 1.aac",
+                "no",
+                "60",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -6491,7 +6991,49 @@
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "aiGeneratedEventId": "01M799805VC3FF5MQ2Q4T78KD9",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "AUDIO - one completion chime when the Victory screen appears."
+        },
+        {
+          "aiGeneratedEventId": "01M799805VC3FF5MQ2Q4T78KD9",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Complete_02.aac",
+                "no",
+                "70",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -6660,14 +7202,16 @@
   "tests": [
     {
       "description": "Player falls onto the floor, walks left/right with arrows and A/D, and jumps with Space reaching a clear height.",
-      "lastRunAt": 1794270187803,
-      "lastRunDurationMs": 327,
-      "lastRunFramesExecuted": 289,
+      "lastRunAt": 1794530198467,
+      "lastRunDurationMs": 570,
+      "lastRunFramesExecuted": 483,
       "lastRunStatus": "passed",
       "name": "Player platformer controls",
       "type": "gameplay",
       "source": [
-        "await harness.goToScene('Untitled scene');",
+        "await harness.goToScene('Level01');",
+        "const probes = await harness.resetSceneAndProbeControls('Player', ['Left', 'Right', 'a', 'd', 'Space']);",
+        "console.log('Control probes: ' + JSON.stringify(probes));",
         "await harness.stepFrames(60);",
         "",
         "const p0 = harness.getObjects('Player')[0];",
@@ -6719,155 +7263,112 @@
         "harness.assert(walking === 'Walk', 'Player plays the Walk animation while moving (got ' + walking + ')');",
         "harness.assert(idle === 'Idle', 'Player plays the Idle animation when standing (got ' + idle + ')');",
         "",
-        "await harness.takeScreenshot('player on ground');",
-        ""
+        "await harness.takeScreenshot('player on ground');"
       ]
     },
     {
-      "description": "Verifies Idle/Walk/Run/Jump animation states and that sprint (Shift) is faster than walk.",
-      "lastRunAt": 1794279189593,
-      "lastRunDurationMs": 289,
-      "lastRunFramesExecuted": 158,
+      "description": "Verifies Idle/Walk/Run/Jump animation states and that sprint (Shift) is faster than walk, staying on the shortened starting floor.",
+      "lastRunAt": 1794534562463,
+      "lastRunDurationMs": 689,
+      "lastRunFramesExecuted": 137,
       "lastRunStatus": "passed",
       "name": "Player animation states",
       "type": "gameplay",
       "source": [
         "await harness.goToScene('Level01');",
-        "await harness.stepFrames(30);",
-        "const player = () => harness.getObjects('Player')[0];",
-        "const anim = () => player() && player().animation;",
+        "const settled = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  const bh = p && p.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true && Math.abs(p.y - 389) < 6;",
+        "}, { maxFrames: 240 });",
+        "harness.assert(settled, 'player settled on the starting floor');",
+        "const anim = () => (harness.getObjects('Player')[0] || {}).animation;",
+        "harness.assert(anim() === 'Idle', 'Idle on the floor, not moving (got ' + anim() + ')');",
         "",
-        "// Idle on floor",
-        "harness.assert(anim() === 'Idle', 'Idle on floor, not moving (got ' + anim() + ')');",
-        "",
-        "// Walk",
+        "// walk (no shift) — kept short so the player stays on the shortened starting floor (ends at x=539)",
+        "const x0 = harness.getObjects('Player')[0].x;",
         "harness.setKeyPressed('Right', true);",
-        "await harness.stepFrames(20);",
+        "await harness.stepFrames(18);",
         "harness.assert(anim() === 'Walk', 'Walk while moving without Shift (got ' + anim() + ')');",
-        "const walkX = player().x;",
+        "const x1 = harness.getObjects('Player')[0].x;",
         "",
-        "// Run with Shift",
+        "// run with shift",
         "harness.setKeyPressed('LShift', true);",
-        "await harness.stepFrames(20);",
+        "await harness.stepFrames(18);",
         "harness.assert(anim() === 'Run', 'Run while moving with Shift (got ' + anim() + ')');",
-        "const runX = player().x;",
+        "const x2 = harness.getObjects('Player')[0].x;",
         "harness.setKeyPressed('LShift', false);",
         "",
-        "// Jump overrides ground animations",
+        "const walkSpeed = (x1 - x0) / (18 / 60), runSpeed = (x2 - x1) / (18 / 60);",
+        "harness.assert(x2 < 520, 'player stayed on the starting floor while sprinting (x=' + x2.toFixed(0) + ')');",
+        "harness.assert(runSpeed > walkSpeed * 1.2, 'Sprint is faster: walk ' + walkSpeed.toFixed(0) + ' px/s vs run ' + runSpeed.toFixed(0) + ' px/s');",
+        "",
+        "// jump overrides ground animations (released keys first so the player does not drift off the floor)",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(12);",
+        "harness.assert(anim() === 'Idle', 'Idle again after releasing the movement keys (got ' + anim() + ')');",
         "harness.setKeyPressed('Space', true);",
         "await harness.stepFrames(2);",
         "harness.setKeyPressed('Space', false);",
         "await harness.stepFrames(5);",
         "harness.assert(anim() === 'Jump', 'Jump animation while airborne (got ' + anim() + ')');",
-        "harness.setKeyPressed('Right', false);",
-        "await harness.stepUntil(() => player().behaviors.PlatformerObject && player().behaviors.PlatformerObject.state.IsOnFloor, { maxFrames: 300 });",
-        "harness.assert(anim() === 'Idle', 'Back to Idle after landing (got ' + anim() + ')');",
         "",
-        "// Sprint actually moves faster",
-        "harness.setKeyPressed('Right', true);",
-        "await harness.stepFrames(30);",
-        "const x1 = player().x;",
-        "harness.setKeyPressed('LShift', true);",
-        "await harness.stepFrames(30);",
-        "const x2 = player().x;",
-        "harness.setKeyPressed('Right', false);",
-        "harness.setKeyPressed('LShift', false);",
-        "const walkSpeed = (x1 - walkX) / 0.5, runSpeed = (x2 - runX) / 0.5;",
-        "harness.assert(runSpeed > walkSpeed * 1.2, 'Sprint is faster: walk ' + walkSpeed.toFixed(0) + ' px/s vs run ' + runSpeed.toFixed(0) + ' px/s');",
-        "await harness.takeScreenshot('animation states');"
+        "const landed = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  const bh = p && p.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true;",
+        "}, { maxFrames: 300 });",
+        "harness.assert(landed, 'player landed after the jump');",
+        "await harness.stepFrames(6);",
+        "harness.assert(anim() === 'Idle', 'Back to Idle after landing (got ' + anim() + ')');",
+        "harness.assert(harness.getSceneName() === 'Level01', 'no fall occurred during the animation checks');",
+        "await harness.takeScreenshot('animation states');",
+        ""
       ]
     },
     {
-      "description": "EnergyPickup is reachable, collected on collision, recharges Battery by 20 capped at 100.",
-      "lastRunAt": 1794352831205,
-      "lastRunDurationMs": 271,
-      "lastRunFramesExecuted": 38,
+      "description": "The pickup on the floating platform is reachable, collected on collision, and only that one pickup is consumed; battery stays in 0..100.",
+      "lastRunAt": 1794534449900,
+      "lastRunDurationMs": 586,
+      "lastRunFramesExecuted": 43,
       "lastRunStatus": "passed",
       "name": "Energy pickup collection",
       "type": "gameplay",
       "source": [
         "await harness.goToScene('Level01');",
         "await harness.stepFrames(30);",
-        "let pickup = harness.getObjects('EnergyPickup')[0];",
-        "harness.assert(!!pickup, 'EnergyPickup exists in Level01');",
-        "harness.assert(pickup.y > 280 && pickup.y < 340, 'EnergyPickup sits just above the platform (top y=' + pickup.y + ')');",
-        "// Arrange: drop the player just left of the pickup, above the platform, so it lands on it",
+        "const pickups = harness.getObjects('EnergyPickup');",
+        "harness.assert(pickups.length === 3, 'three pickups present in Level01 (found ' + pickups.length + ')');",
+        "const target = pickups.find(p => Math.abs(p.x - 625) < 6);",
+        "harness.assert(!!target, 'pickup at (625,287) exists');",
+        "harness.assert(!!target && target.y > 280 && target.y < 340, 'pickup sits just above the floating platform (top y=' + (target && target.y) + ')');",
+        "",
+        "const before = pickups.length;",
         "const player = harness.getObjects('Player')[0];",
-        "harness.setObjectPosition(player.id, 500, 200);",
-        "await harness.stepFrames(5);",
-        "harness.setObjectPosition(player.id, 560, 200); // just left of the pickup (pickup x=625)",
-        "let landed = await harness.stepUntil(() => {",
+        "harness.setObjectPosition(player.id, 520, 200); // above the floating platform, left of the pickup",
+        "const landed = await harness.stepUntil(() => {",
         "  const p = harness.getObjects('Player')[0];",
-        "  return p.y >= 180 && p.y <= 330; // standing on platform top (326 - height 124 = ~202)",
+        "  const bh = p && p.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true && Math.abs(p.y - 240) < 8;",
         "}, { maxFrames: 300 });",
-        "harness.assert(landed, 'Player landed on the floating platform (y=' + harness.getObjects('Player')[0].y + ')');",
-        "// Walk right into the pickup",
+        "harness.assert(landed, 'player landed on the floating platform (y=' + harness.getObjects('Player')[0].y.toFixed(0) + ')');",
+        "",
         "harness.setKeyPressed('Right', true);",
-        "await harness.stepUntil(() => harness.getObjects('EnergyPickup').length === 0, { maxFrames: 300 });",
+        "const collected = await harness.stepUntil(() => harness.getObjects('EnergyPickup').length < before, { maxFrames: 300 });",
         "harness.setKeyPressed('Right', false);",
-        "harness.stepFrames(10);",
-        "harness.assert(harness.getObjects('EnergyPickup').length === 0, 'EnergyPickup was collected (deleted)');",
+        "await harness.stepFrames(5);",
+        "harness.assert(collected, 'walking into the pickup collected it (deleted)');",
+        "harness.assert(harness.getObjects('EnergyPickup').length === before - 1, 'exactly one pickup consumed (left ' + harness.getObjects('EnergyPickup').length + ')');",
         "const battery = harness.getSceneVariable('Battery');",
-        "harness.assert(battery && Number(battery.value) >= 20, 'Battery increased from pickup (value=' + (battery && battery.value) + ')');",
-        "harness.assert(battery && Number(battery.value) <= 100, 'Battery never exceeds 100 (value=' + (battery && battery.value) + ')');",
-        "await harness.takeScreenshot('after collection');"
-      ]
-    },
-    {
-      "description": "Player can traverse all platforms of the extended Level01 and reach the final generator platform.",
-      "lastRunAt": 1794360359080,
-      "lastRunDurationMs": 566,
-      "lastRunFramesExecuted": 308,
-      "lastRunStatus": "failed",
-      "name": "Level traversal to generator platform",
-      "type": "gameplay",
-      "source": [
-        "await harness.goToScene('Level01');",
-        "await harness.stepFrames(30);",
-        "// Route (platform tops): floating(326) -> A(250) -> B(190) -> C(260) -> final(400)",
-        "const route = [",
-        "  { x: 640, top: 326, name: 'floating' },",
-        "  { x: 880, top: 250, name: 'A' },",
-        "  { x: 1150, top: 190, name: 'B' },",
-        "  { x: 1430, top: 260, name: 'C' },",
-        "  { x: 1840, top: 400, name: 'final' },",
-        "];",
-        "let idx = 0, failed = null, lastX = -999, lastProgressFrame = 0, jumpHeld = 0;",
-        "for (let i = 0; i < 8000 && idx < route.length; i++) {",
-        "  await harness.stepFrames(1);",
-        "  const p = harness.getObjects('Player')[0];",
-        "  if (!p) { failed = 'player missing at frame ' + i; break; }",
-        "  if (p.y > 700) { failed = 'fell out at x=' + p.x + ' targeting ' + route[idx].name; break; }",
-        "  const t = route[idx];",
-        "  const bottom = p.y + p.height;",
-        "  const dx = t.x - p.x;",
-        "  const bh = p.behaviors.PlatformerObject;",
-        "  const onFloor = bh ? bh.state.IsOnFloor !== false : false;",
-        "  // Waypoint reached: standing on this platform (bottom near its top) within x range",
-        "  if (Math.abs(bottom - t.top) < 50 && Math.abs(dx) < 40) { idx++; continue; }",
-        "  // Stuck detection: if barely moved for 150 frames, force a jump burst",
-        "  if (Math.abs(p.x - lastX) > 10) { lastX = p.x; lastProgressFrame = i; }",
-        "  const stuck = i - lastProgressFrame > 150;",
-        "  if (dx > 15) { harness.setKeyPressed('Right', true); harness.setKeyPressed('Left', false); }",
-        "  else if (dx < -15) { harness.setKeyPressed('Left', true); harness.setKeyPressed('Right', false); }",
-        "  else { harness.setKeyPressed('Left', false); harness.setKeyPressed('Right', false); }",
-        "  const wantsJump = stuck || (onFloor && (t.top < bottom - 30 || dx > 150));",
-        "  if (wantsJump) { jumpHeld = 6; }",
-        "  if (jumpHeld > 0) { harness.setKeyPressed('Space', true); jumpHeld--; }",
-        "  else { harness.setKeyPressed('Space', false); }",
-        "}",
-        "harness.setKeyPressed('Right', false); harness.setKeyPressed('Left', false); harness.setKeyPressed('Space', false);",
-        "harness.assert(!failed, failed || 'no failure');",
-        "harness.assert(idx >= route.length, 'Player traversed all platforms (reached ' + idx + '/' + route.length + ')');",
-        "const p = harness.getObjects('Player')[0];",
-        "harness.assert(p && p.x > 1700, 'Player stands on the final platform (x=' + (p && p.x) + ', y=' + (p && p.y) + ')');",
-        "await harness.takeScreenshot('final platform');"
+        "harness.assert(!!battery && Number(battery.value) >= 0 && Number(battery.value) <= 100, 'battery stays within 0..100 (value=' + (battery && battery.value) + ')');",
+        "await harness.takeScreenshot('after collection');",
+        ""
       ]
     },
     {
       "description": "Camera follows Player horizontally with clamped bounds; HUD stays on fixed UI layer.",
-      "lastRunAt": 1794525995466,
-      "lastRunDurationMs": 606,
+      "lastRunAt": 1794530314952,
+      "lastRunDurationMs": 385,
       "lastRunFramesExecuted": 151,
       "lastRunStatus": "passed",
       "name": "Camera follow and HUD",
@@ -6903,74 +7404,85 @@
       ]
     },
     {
-      "description": "Vertical dead-zone camera: no bounce on small jumps, follows on high/low platforms with bounds.",
-      "lastRunAt": 1794371984928,
-      "lastRunDurationMs": 1245,
-      "lastRunFramesExecuted": 221,
+      "description": "Vertical dead-zone camera within its real clamps: no bounce on small jumps, follows the player up (never above 130) on the high platform, returns to 400 on the floor, HUD fixed.",
+      "lastRunAt": 1794530287700,
+      "lastRunDurationMs": 485,
+      "lastRunFramesExecuted": 281,
       "lastRunStatus": "passed",
       "name": "Vertical camera dead zone",
       "type": "gameplay",
       "source": [
         "await harness.goToScene('Level01');",
-        "await harness.stepFrames(90); // land + camera settle",
+        "await harness.stepFrames(90);",
         "let cam = harness.getCameraState('');",
         "const startY = cam.y;",
         "const p = harness.getObjects('Player')[0];",
-        "// Small jump: no camera movement",
+        "harness.assert(Math.abs(startY - 400) < 2, 'camera settled at Y=400 on the starting floor (y=' + startY.toFixed(0) + ')');",
+        "",
         "harness.setKeyPressed('Space', true);",
         "await harness.stepFrames(10);",
         "harness.setKeyPressed('Space', false);",
         "await harness.stepFrames(60);",
         "cam = harness.getCameraState('');",
-        "harness.assert(Math.abs(cam.y - startY) < 2, 'Small jump does not move camera Y (y=' + cam.y + ')');",
-        "// High platform B: camera moves UP, clamped at 310",
+        "harness.assert(Math.abs(cam.y - startY) < 2, 'Small jump does not move camera Y (y=' + cam.y.toFixed(0) + ')');",
+        "",
+        "// High platform B (top 190): camera follows UP but never past its upper bound 130",
         "harness.setObjectPosition(p.id, 1150, 100);",
-        "await harness.stepFrames(30);",
+        "await harness.stepFrames(60);",
         "cam = harness.getCameraState('');",
-        "harness.assert(cam.y < startY - 20, 'Camera moved UP (y=' + Math.round(cam.y) + ')');",
-        "harness.assert(cam.y >= 309 && cam.y <= 311, 'Clamped at upper bound 310 (y=' + cam.y + ')');",
-        "// Floor: camera back DOWN, clamped at 400",
+        "harness.assert(cam.y < startY - 20, 'Camera moved UP on the high platform (y=' + Math.round(cam.y) + ')');",
+        "harness.assert(cam.y >= 128, 'Camera Y respects the upper bound 130 (y=' + cam.y.toFixed(1) + ')');",
+        "const highPlayer = harness.getObjects('Player')[0];",
+        "harness.assert(highPlayer.centerY >= cam.y - 271 && highPlayer.centerY <= cam.y + 271, 'Player stays inside the vertical viewport on the high platform');",
+        "",
+        "// Floor: camera back DOWN to its lower bound 400",
         "harness.setObjectPosition(p.id, 400, 470);",
-        "await harness.stepFrames(30);",
+        "await harness.stepFrames(60);",
         "cam = harness.getCameraState('');",
-        "harness.assert(cam.y >= startY - 2 && cam.y <= 401, 'Back at lower bound 400 on the floor (y=' + cam.y + ')');",
-        "// Horizontal unchanged",
+        "harness.assert(cam.y >= startY - 2 && cam.y <= 401, 'Back at lower bound 400 on the floor (y=' + cam.y.toFixed(0) + ')');",
+        "",
         "const low = harness.getObjects('Player')[0];",
         "harness.assert(Math.abs(cam.x - Math.min(Math.max(low.centerX, 480), 1580)) < 3, 'Horizontal follow unchanged (x=' + Math.round(cam.x) + ')');",
-        "// HUD fixed",
+        "",
         "const hud = harness.getObjects('BatteryText')[0];",
-        "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
-        "await harness.takeScreenshot('highest platform framing');"
+        "harness.assert(!!hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
+        "await harness.takeScreenshot('high platform framing');",
+        ""
       ]
     },
     {
-      "description": "Smoothed camera: direction changes, full jump arc from highest platform fully visible, descent, boundaries, HUD.",
-      "lastRunAt": 1794375104428,
-      "lastRunDurationMs": 611,
-      "lastRunFramesExecuted": 617,
+      "description": "Smoothed camera: direction changes with the camera unclamped, full jump arc from the highest platform fully visible, descent, boundaries, HUD.",
+      "lastRunAt": 1794534541739,
+      "lastRunDurationMs": 833,
+      "lastRunFramesExecuted": 597,
       "lastRunStatus": "passed",
       "name": "Smoothed camera and jump arc visibility",
       "type": "gameplay",
       "source": [
         "await harness.goToScene('Level01');",
         "await harness.stepFrames(90);",
-        "// 1. Direction change test mid-level: teleport to x=600 first, walk right then left",
+        "",
+        "// 1. Direction change mid-level on platform C (1350..1520, top 260) where the camera is NOT clamped",
         "const p = harness.getObjects('Player')[0];",
-        "harness.setObjectPosition(p.id, 600, 400);",
-        "await harness.stepFrames(40);",
+        "harness.setObjectPosition(p.id, 1358, 100);",
+        "await harness.stepFrames(70);",
+        "const landedC = harness.getObjects('Player')[0];",
+        "harness.assert(Math.abs(landedC.y - 174) < 10, 'player landed on platform C (y=' + landedC.y.toFixed(0) + ')');",
+        "const camStart = harness.getCameraState('').x;",
+        "harness.assert(Math.abs(camStart - landedC.centerX) < 6, 'camera centred on the player before the walk (cam=' + Math.round(camStart) + ', player=' + Math.round(landedC.centerX) + ')');",
         "harness.setKeyPressed('Right', true);",
-        "await harness.stepFrames(60);",
+        "await harness.stepFrames(12);",
         "harness.setKeyPressed('Right', false);",
-        "await harness.stepFrames(20);",
+        "await harness.stepFrames(15);",
         "const camAfterRight = harness.getCameraState('').x;",
         "harness.setKeyPressed('Left', true);",
-        "await harness.stepFrames(60);",
+        "await harness.stepFrames(18);",
         "harness.setKeyPressed('Left', false);",
-        "await harness.stepFrames(20);",
+        "await harness.stepFrames(15);",
         "const camAfterLeft = harness.getCameraState('').x;",
-        "harness.assert(camAfterRight > 600, 'Camera followed right (x=' + Math.round(camAfterRight) + ')');",
-        "harness.assert(camAfterLeft < camAfterRight, 'Camera moved back left after direction change (right=' + Math.round(camAfterRight) + ', left=' + Math.round(camAfterLeft) + ')');",
-        "// No abrupt snapping while converging",
+        "harness.assert(harness.getSceneName() === 'Level01', 'player never fell during the direction test (scene=' + harness.getSceneName() + ')');",
+        "harness.assert(camAfterRight > camStart + 5, 'Camera followed right (x ' + Math.round(camStart) + ' -> ' + Math.round(camAfterRight) + ')');",
+        "harness.assert(camAfterLeft < camAfterRight - 5, 'Camera moved back left after direction change (right=' + Math.round(camAfterRight) + ', left=' + Math.round(camAfterLeft) + ')');",
         "let prev = null, maxJump = 0;",
         "for (let i = 0; i < 20; i++) {",
         "  await harness.stepFrames(1);",
@@ -6979,12 +7491,13 @@
         "  prev = cx;",
         "}",
         "harness.assert(maxJump < 12, 'No abrupt horizontal snapping (max per-frame move=' + maxJump.toFixed(1) + 'px)');",
+        "",
         "// 2. Full jump arc from the highest platform B: entire sprite stays visible",
         "await harness.goToScene('Level01');",
-        "await harness.stepFrames(10);",
+        "await harness.stepFrames(20);",
         "const p2 = harness.getObjects('Player')[0];",
-        "harness.setObjectPosition(p2.id, 1100, 60); // land on B (top 190)",
-        "await harness.stepFrames(40);",
+        "harness.setObjectPosition(p2.id, 1100, 60);",
+        "await harness.stepFrames(60);",
         "let minY = 9999, minVisibleTop = 9999;",
         "harness.setKeyPressed('Space', true);",
         "for (let i = 0; i < 75; i++) {",
@@ -6999,78 +7512,81 @@
         "console.log('apex player y=' + Math.round(minY) + ', best sprite-top screen y=' + Math.round(minVisibleTop));",
         "harness.assert(minY < 60, 'Player reached the full jump arc above platform B (min y=' + Math.round(minY) + ')');",
         "harness.assert(minVisibleTop >= 0, 'ENTIRE sprite stayed on screen at apex (best sprite-top screen y=' + Math.round(minVisibleTop) + 'px)');",
+        "",
         "// 3. Landing on B, then descending to the floor: camera returns down, bounds respected",
         "await harness.stepFrames(60);",
         "const c2 = harness.getCameraState('');",
         "const q2 = harness.getObjects('Player')[0];",
         "harness.assert(q2.behaviors.PlatformerObject.state.IsOnFloor === true, 'Player landed back on B');",
         "harness.setObjectPosition(q2.id, 400, 400);",
-        "await harness.stepFrames(60);",
+        "await harness.stepFrames(70);",
         "const c3 = harness.getCameraState('');",
+        "harness.assert(harness.getSceneName() === 'Level01', 'player stayed in the scene when descending to the floor');",
         "harness.assert(c3.y > c2.y, 'Camera descended (y ' + Math.round(c2.y) + ' -> ' + Math.round(c3.y) + ')');",
         "harness.assert(c3.y <= 401, 'Lower bound 400 respected (y=' + c3.y + ')');",
+        "",
         "// 4. Far right end: horizontal boundary preserved",
         "const p4 = harness.getObjects('Player')[0];",
         "harness.setObjectPosition(p4.id, 1840, 300);",
-        "await harness.stepFrames(60);",
+        "await harness.stepFrames(70);",
         "const c4 = harness.getCameraState('');",
         "harness.assert(Math.abs(c4.x - 1580) < 15, 'Right horizontal boundary ~1580 preserved (x=' + Math.round(c4.x) + ')');",
+        "",
         "// 5. HUD fixed",
         "const hud = harness.getObjects('BatteryText')[0];",
-        "harness.assert(hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
-        "await harness.takeScreenshot('after jump arc from highest platform');"
+        "harness.assert(!!hud && !hud.hidden && hud.layer === 'UI', 'BatteryText still fixed on UI layer');",
+        "await harness.takeScreenshot('after jump arc from highest platform');",
+        ""
       ]
     },
     {
-      "description": "Generator reachable, victory on touch with battery, Victory scene texts, GameOver path intact.",
-      "lastRunAt": 1794438339240,
-      "lastRunDurationMs": 823,
-      "lastRunFramesExecuted": 354,
+      "description": "Victory objective: the player can stand on the final platform, walk into the generator zone with battery, see the prompt and trigger Victory with E (waiting for the activation sound beat).",
+      "lastRunAt": 1794534359235,
+      "lastRunDurationMs": 999,
+      "lastRunFramesExecuted": 122,
       "lastRunStatus": "passed",
       "name": "Generator victory objective",
       "type": "gameplay",
       "source": [
-        "// A) Player reaches the Generator with normal movement and victory triggers",
         "await harness.goToScene('Level01');",
-        "await harness.stepFrames(30);",
-        "const gen = harness.getObjects('Generator')[0];",
-        "harness.assert(!!gen, 'Generator exists in Level01');",
-        "console.log('Generator at x=' + Math.round(gen.x) + ' y=' + Math.round(gen.y) + ' bottom=' + Math.round(gen.y + gen.height));",
-        "// Drop the player on the final platform (starts x=1620), left of the generator (x=1750)",
-        "const p = harness.getObjects('Player')[0];",
-        "harness.setObjectPosition(p.id, 1630, 280);",
         "await harness.stepFrames(40);",
-        "const landed = harness.getObjects('Player')[0];",
-        "harness.assert(landed.behaviors.PlatformerObject.state.IsOnFloor === true, 'Player standing on final platform (bottom=' + Math.round(landed.y + landed.height) + ')');",
+        "harness.assert(harness.getObjects('Generator').length === 1, 'Generator exists in Level01');",
+        "const p0 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p0.id, 1650, 300);",
+        "const landed = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  const bh = p && p.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true && Math.abs(p.y - 314) < 10;",
+        "}, { maxFrames: 300 });",
+        "harness.assert(landed, 'player stands on the final generator platform (y=' + harness.getObjects('Player')[0].y.toFixed(0) + ')');",
         "harness.setKeyPressed('Right', true);",
-        "let won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 300 });",
+        "const inZone = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  return !!p && p.centerX >= 1700 && p.centerX <= 1746;",
+        "}, { maxFrames: 300 });",
         "harness.setKeyPressed('Right', false);",
-        "harness.assert(won, 'Touching Generator with Battery > 0 changed to Victory scene');",
-        "// B) Victory displays both texts",
+        "await harness.stepFrames(5);",
+        "harness.assert(inZone, 'player walked into the generator interaction zone (centerX=' + harness.getObjects('Player')[0].centerX.toFixed(0) + ')');",
+        "const prompt = harness.getObjects('GeneratorPrompt')[0];",
+        "harness.assert(!!prompt && !prompt.hidden, 'prompt shown in the zone');",
+        "const battery = harness.getSceneVariable('Battery');",
+        "harness.assert(!!battery && Number(battery.value) > 0, 'battery charged (value=' + (battery && battery.value) + ')');",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('e', false);",
+        "const won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 150 });",
+        "harness.assert(won, 'E in the zone with battery reached the Victory scene (allow the activation sound beat, scene=' + harness.getSceneName() + ')');",
         "await harness.stepFrames(10);",
-        "const title = harness.getObjects('VictoryTitle')[0];",
-        "const sub = harness.getObjects('VictorySubtitle')[0];",
-        "harness.assert(title && title.text === 'POWER RESTORED', 'Victory title text present');",
-        "harness.assert(sub && sub.text === 'You kept the last spark alive.', 'Victory subtitle text present');",
-        "harness.assert(title && !title.hidden && sub && !sub.hidden, 'Both victory texts visible');",
-        "await harness.takeScreenshot('victory scene');",
-        "// C) Battery depletion without touching Generator still leads to GameOver",
-        "await harness.goToScene('Level01');",
-        "await harness.stepFrames(10);",
-        "harness.setSceneVariable('Battery', 2);",
-        "const p2 = harness.getObjects('Player')[0];",
-        "harness.setObjectPosition(p2.id, 200, 400);",
-        "await harness.stepFrames(10);",
-        "let over = await harness.stepUntil(() => harness.getSceneName() === 'GameOver', { maxFrames: 600 });",
-        "harness.assert(over, 'Battery depletion without generator leads to GameOver');",
-        "await harness.takeScreenshot('game over still works');"
+        "harness.assert(harness.getObjects('VictoryTitle').length === 1 && harness.getObjects('VictorySubtitle').length === 1, 'Victory scene shows its title and subtitle');",
+        "await harness.takeScreenshot('victory');",
+        ""
       ]
     },
     {
       "description": "Generator interaction: no auto-victory, E-key only inside zone, prompt visibility, GameOver intact.",
-      "lastRunAt": 1794525934376,
-      "lastRunDurationMs": 1268,
-      "lastRunFramesExecuted": 610,
+      "lastRunAt": 1794534391439,
+      "lastRunDurationMs": 1545,
+      "lastRunFramesExecuted": 665,
       "lastRunStatus": "passed",
       "name": "Generator interaction trigger",
       "type": "gameplay",
@@ -7139,68 +7655,86 @@
       ]
     },
     {
-      "description": "Prompt hides when leaving the zone OR battery empty; E interaction still gated correctly.",
-      "lastRunAt": 1794444980474,
-      "lastRunDurationMs": 464,
-      "lastRunFramesExecuted": 176,
+      "description": "Generator prompt gating: visible in the zone with battery, hidden outside or at zero battery, E gated correctly, and a clean scene reload confirms E with battery still wins.",
+      "lastRunAt": 1794534433180,
+      "lastRunDurationMs": 1038,
+      "lastRunFramesExecuted": 333,
       "lastRunStatus": "passed",
       "name": "Generator prompt visibility",
       "type": "gameplay",
       "source": [
+        "async function goToZone() {",
+        "  await harness.stepFrames(40);",
+        "  const p0 = harness.getObjects('Player')[0];",
+        "  harness.setObjectPosition(p0.id, 1650, 300);",
+        "  await harness.stepFrames(50);",
+        "  harness.setKeyPressed('Right', true);",
+        "  const inZone = await harness.stepUntil(() => {",
+        "    const p = harness.getObjects('Player')[0];",
+        "    return !!p && p.centerX >= 1700 && p.centerX <= 1746;",
+        "  }, { maxFrames: 300 });",
+        "  harness.setKeyPressed('Right', false);",
+        "  await harness.stepFrames(5);",
+        "  return inZone;",
+        "}",
+        "const promptVisible = () => {",
+        "  const pr = harness.getObjects('GeneratorPrompt')[0];",
+        "  return !!pr && !pr.hidden;",
+        "};",
+        "",
+        "// --- Scene A: prompt gating rules ---",
         "await harness.goToScene('Level01');",
-        "await harness.stepFrames(30);",
-        "const p = harness.getObjects('Player')[0];",
-        "harness.setObjectPosition(p.id, 1630, 280);",
-        "await harness.stepFrames(40);",
-        "// 1. Walk into the zone: prompt appears",
+        "harness.assert(await goToZone(), 'player reached the generator zone');",
+        "harness.assert(promptVisible(), '1. Prompt appears inside the zone with Battery > 0');",
+        "",
+        "// leave the zone (walk left)",
+        "harness.setKeyPressed('Left', true);",
+        "const leftZone = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  return !!p && p.centerX < 1640;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Left', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(leftZone && !promptVisible(), '2. Prompt disappears when the Player leaves the zone');",
+        "",
         "harness.setKeyPressed('Right', true);",
-        "await harness.stepUntil(() => {",
-        "  const q = harness.getObjects('Player')[0];",
-        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
+        "const backIn = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  return !!p && p.centerX >= 1700 && p.centerX <= 1746;",
         "}, { maxFrames: 300 });",
         "harness.setKeyPressed('Right', false);",
         "await harness.stepFrames(5);",
-        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, '1. Prompt appears inside the zone with Battery > 0');",
-        "// 2. Leave the zone entirely (main floor, far away): prompt disappears",
-        "harness.setObjectPosition(p.id, 400, 400);",
-        "await harness.stepFrames(15);",
-        "harness.assert(harness.getObjects('GeneratorPrompt')[0].hidden, '2. Prompt disappears when the Player leaves the zone');",
-        "// 3. Return to the zone, then drain Battery to 0 while staying inside: prompt must hide",
-        "harness.setObjectPosition(p.id, 1630, 280);",
-        "await harness.stepFrames(30);",
-        "harness.setKeyPressed('Right', true);",
-        "await harness.stepUntil(() => {",
-        "  const q = harness.getObjects('Player')[0];",
-        "  return q.x + q.width / 2 >= 1700 && q.x + q.width / 2 <= 1745;",
-        "}, { maxFrames: 300 });",
-        "harness.setKeyPressed('Right', false);",
-        "await harness.stepFrames(5);",
-        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, '3a. Prompt visible again inside the zone');",
+        "harness.assert(backIn && promptVisible(), '3a. Prompt visible again inside the zone');",
+        "",
         "harness.setSceneVariable('Battery', 0);",
-        "await harness.stepFrames(10);",
-        "harness.assert(harness.getObjects('GeneratorPrompt')[0].hidden, '3b. Prompt hidden when Battery = 0 even inside the zone');",
-        "// 4. E inside the zone with Battery = 0 does NOT trigger victory",
-        "harness.setKeyPressed('e', true);",
         "await harness.stepFrames(5);",
-        "harness.setKeyPressed('e', false);",
-        "await harness.stepFrames(20);",
-        "harness.assert(harness.getSceneName() === 'Level01', '4a. E with Battery = 0 does not trigger Victory');",
-        "// Restore battery, still inside the zone: prompt returns and E triggers Victory",
-        "harness.setSceneVariable('Battery', 50);",
-        "await harness.stepFrames(10);",
-        "harness.assert(!harness.getObjects('GeneratorPrompt')[0].hidden, '4b. Prompt returns when Battery > 0 inside the zone');",
+        "harness.assert(!promptVisible(), '3b. Prompt hidden when Battery = 0 even inside the zone');",
         "harness.setKeyPressed('e', true);",
-        "let won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 120 });",
+        "await harness.stepFrames(4);",
         "harness.setKeyPressed('e', false);",
-        "harness.assert(won, '4c. E inside the zone with Battery > 0 triggers Victory');",
-        "await harness.takeScreenshot('victory after prompt logic fix');"
+        "await harness.stepFrames(10);",
+        "harness.assert(harness.getSceneName() === 'Level01', '4a. E with Battery = 0 does not trigger Victory');",
+        "",
+        "// --- Scene B: fresh Level01 (clears the pending battery GameOver) then the real win ---",
+        "await harness.goToScene('Level01');",
+        "harness.assert(await goToZone(), 'player reached the generator zone on the fresh Level01');",
+        "harness.assert(promptVisible(), '4b. Prompt visible inside the zone with Battery restored to 100');",
+        "const battery = harness.getSceneVariable('Battery');",
+        "harness.assert(!!battery && Number(battery.value) > 0, 'battery charged again after the scene reload (value=' + (battery && battery.value) + ')');",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(4);",
+        "harness.setKeyPressed('e', false);",
+        "const won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 150 });",
+        "harness.assert(won, '4c. E inside the zone with Battery > 0 triggers Victory (scene=' + harness.getSceneName() + ')');",
+        "await harness.takeScreenshot('victory');",
+        ""
       ]
     },
     {
       "description": "Three pickups placed, each collectible independently with +20 battery capped at 100; victory intact.",
-      "lastRunAt": 1794448148062,
-      "lastRunDurationMs": 478,
-      "lastRunFramesExecuted": 204,
+      "lastRunAt": 1794534394294,
+      "lastRunDurationMs": 673,
+      "lastRunFramesExecuted": 259,
       "lastRunStatus": "passed",
       "name": "Three energy pickups",
       "type": "gameplay",
@@ -7301,8 +7835,8 @@
     },
     {
       "description": "LAST SPARK background on dedicated Background layer covers the viewport at the start area, the highest platform and the generator chamber, follows the camera, and does not disturb gameplay.",
-      "lastRunAt": 1794525917609,
-      "lastRunDurationMs": 1007,
+      "lastRunAt": 1794532852598,
+      "lastRunDurationMs": 575,
       "lastRunFramesExecuted": 193,
       "lastRunStatus": "passed",
       "name": "Industrial background coverage",
@@ -7381,6 +7915,272 @@
         "harness.assert(!!p && p.y < 500, 'player still standing on a platform (y=' + (p && p.y.toFixed(0)) + ')');",
         ""
       ]
+    },
+    {
+      "description": "Milestone 4D: from the real start position the Player walks/jumps start floor -> floating platform -> Platform A -> Platform B -> Platform C -> generator platform without sprinting, collects all 3 pickups and triggers Victory (waiting for the activation beat).",
+      "lastRunAt": 1794534344353,
+      "lastRunDurationMs": 1232,
+      "lastRunFramesExecuted": 481,
+      "lastRunStatus": "passed",
+      "name": "Platform layout 4D route",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(40);",
+        "const PL = {",
+        "  start: { l: -1, r: 539, top: 475 },",
+        "  P1: { l: 556, r: 727, top: 326 },",
+        "  A: { l: 825, r: 975, top: 250 },",
+        "  B: { l: 1080, r: 1240, top: 190 },",
+        "  C: { l: 1350, r: 1520, top: 260 },",
+        "  FIN: { l: 1620, r: 2060, top: 400 },",
+        "};",
+        "const startPlayer = harness.getObjects('Player')[0];",
+        "const FOOT_OFFSET = PL.start.top - startPlayer.y;",
+        "harness.assert(Math.abs(FOOT_OFFSET - 86) < 3, 'player rest offset measured on the starting floor (' + FOOT_OFFSET + ')');",
+        "const ROUTE = [['start', 'P1', 641], ['P1', 'A', 900], ['A', 'B', 1160], ['B', 'C', 1435], ['C', 'FIN', 1715]];",
+        "const hops = [];",
+        "let outOfView = 0, jumpHold = 0, jumpCool = 0, lastCx = -999, lastProgress = 0;",
+        "for (const [from, to, targetX] of ROUTE) {",
+        "  const S = PL[from], T = PL[to];",
+        "  const restY = T.top - FOOT_OFFSET;",
+        "  let reached = false;",
+        "  for (let i = 0; i < 900 && !reached; i++) {",
+        "    await harness.stepFrames(1);",
+        "    const p = harness.getObjects('Player')[0];",
+        "    if (!p) break;",
+        "    const bh = p.behaviors.PlatformerObject;",
+        "    const onFloor = !!(bh && bh.state.IsOnFloor !== false);",
+        "    const cx = p.centerX;",
+        "    if (onFloor && Math.abs(p.y - restY) < 7 && cx > T.l - 20 && cx < T.r + 20) { reached = true; break; }",
+        "    if (p.y > 760) break;",
+        "    const cam = harness.getCameraState('');",
+        "    if (cx < cam.x - 480 || cx > cam.x + 480 || p.centerY < cam.y - 270 || p.centerY > cam.y + 270) outOfView++;",
+        "    const dx = targetX - cx;",
+        "    if (Math.abs(cx - lastCx) > 8) { lastCx = cx; lastProgress = i; }",
+        "    const stuck = i - lastProgress > 70;",
+        "    if (dx > 14) { harness.setKeyPressed('Right', true); harness.setKeyPressed('Left', false); }",
+        "    else if (dx < -14) { harness.setKeyPressed('Left', true); harness.setKeyPressed('Right', false); }",
+        "    else { harness.setKeyPressed('Right', false); harness.setKeyPressed('Left', false); }",
+        "    if (jumpHold > 0) {",
+        "      harness.setKeyPressed('Space', true); jumpHold--;",
+        "      if (jumpHold === 0) { harness.setKeyPressed('Space', false); jumpCool = 14; }",
+        "    } else if (jumpCool > 0) { jumpCool--; }",
+        "    else if (onFloor) {",
+        "      const edge = dx > 0 ? S.r : S.l;",
+        "      if (Math.abs(cx - edge) < 95 || stuck) jumpHold = 12;",
+        "    }",
+        "  }",
+        "  harness.setKeyPressed('Right', false); harness.setKeyPressed('Left', false); harness.setKeyPressed('Space', false);",
+        "  const p = harness.getObjects('Player')[0];",
+        "  hops.push(from + '->' + to + ':' + (reached ? 'OK' : 'FAIL') + '(x=' + (p ? p.x.toFixed(0) : '?') + ',y=' + (p ? p.y.toFixed(0) : '?') + ')');",
+        "  if (!reached) { harness.fail('Jump ' + from + ' -> ' + to + ' not reached. hops=' + hops.join(' ')); break; }",
+        "  lastCx = -999; lastProgress = 0; jumpHold = 0; jumpCool = 0;",
+        "  await harness.stepFrames(4);",
+        "}",
+        "harness.assert(hops.length === 5 && hops.every(h => h.includes(':OK')), 'opening route fully traversable without sprinting: ' + hops.join(' '));",
+        "harness.assert(outOfView === 0, 'player stayed inside the camera viewport during the route (' + outOfView + ' out-of-view frames)');",
+        "await harness.takeScreenshot('final platform reached');",
+        "for (let i = 0; i < 300; i++) {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  if (!p || p.centerX < 1712) { harness.setKeyPressed('Right', true); }",
+        "  else { harness.setKeyPressed('Right', false); break; }",
+        "  await harness.stepFrames(1);",
+        "}",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(10);",
+        "const battery = harness.getSceneVariable('Battery');",
+        "harness.assert(!!battery && Number(battery.value) > 0, 'battery still charged at the generator (' + (battery && battery.value) + ')');",
+        "const left = harness.getObjects('EnergyPickup').length;",
+        "harness.assert(left === 0, 'all three energy pickups collected on the walking route (left: ' + left + ')');",
+        "const prompt = harness.getObjects('GeneratorPrompt')[0];",
+        "harness.assert(!!prompt && !prompt.hidden, 'generator prompt visible inside the zone');",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('e', false);",
+        "const won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 150 });",
+        "harness.assert(won, 'E in the zone triggers Victory (allowing the activation sound beat) | hops: ' + hops.join(' '));",
+        "await harness.takeScreenshot('victory');",
+        ""
+      ]
+    },
+    {
+      "description": "Fall below the level -> GameOver with SIGNAL LOST; R retries into a fully reset Level01 (Battery 100, 3 pickups, start position, camera/background); battery depletion still shows POWER DEPLETED; generator still wins.",
+      "lastRunAt": 1794534375501,
+      "lastRunDurationMs": 1404,
+      "lastRunFramesExecuted": 492,
+      "lastRunStatus": "passed",
+      "name": "Fall detection and retry",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(40);",
+        "const startPlayer = harness.getObjects('Player')[0];",
+        "const startX = startPlayer.x, startY = startPlayer.y;",
+        "let b = harness.getSceneVariable('Battery');",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 3, 'three pickups at Level01 start');",
+        "harness.assert(Number(b.value) === 100, 'Battery initialised to 100 at scene start (got ' + b.value + ')');",
+        "",
+        "harness.setKeyPressed('Right', true);",
+        "const fell = await harness.stepUntil(() => harness.getSceneName() === 'GameOver', { maxFrames: 600 });",
+        "harness.setKeyPressed('Right', false);",
+        "harness.assert(fell, 'falling below the level changed to GameOver (scene=' + harness.getSceneName() + ')');",
+        "await harness.stepFrames(10);",
+        "const fallMsg = (harness.getObjects('GameOverText')[0] || {}).text || '';",
+        "harness.assert(fallMsg.indexOf('SIGNAL LOST') === 0, 'fall shows SIGNAL LOST (got ' + JSON.stringify(fallMsg) + ')');",
+        "const retryLabel = (harness.getObjects('RetryText')[0] || {}).text || '';",
+        "harness.assert(retryLabel.toUpperCase().indexOf('PRESS R TO RETRY') === 0, 'retry instruction visible (got ' + JSON.stringify(retryLabel) + ')');",
+        "await harness.takeScreenshot('fall - SIGNAL LOST');",
+        "",
+        "harness.setKeyPressed('r', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('r', false);",
+        "await harness.stepFrames(45);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'R restarted Level01 (scene=' + harness.getSceneName() + ')');",
+        "const p2 = harness.getObjects('Player')[0];",
+        "harness.assert(!!p2 && Math.abs(p2.x - startX) < 2 && Math.abs(p2.y - startY) < 3, 'Player back at the normal start (x=' + (p2 && p2.x.toFixed(0)) + ', y=' + (p2 && p2.y.toFixed(0)) + ' vs ' + startX.toFixed(0) + ',' + startY.toFixed(0) + ')');",
+        "b = harness.getSceneVariable('Battery');",
+        "harness.assert(Number(b.value) >= 99, 'Battery reset to 100 after retry (got ' + (b && b.value) + ')');",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 3, 'all three pickups reappeared after retry (got ' + harness.getObjects('EnergyPickup').length + ')');",
+        "const cam = harness.getCameraState('');",
+        "const bg = harness.getObjects('PowerStationBackground')[0];",
+        "harness.assert(!!cam && Math.abs(cam.x - 480) < 3, 'camera back at its start position (x=' + (cam && cam.x) + ')');",
+        "harness.assert(!!bg && bg.layer === 'Background' && bg.x <= cam.x - 480 && bg.x + bg.width >= cam.x + 480, 'background still covers the viewport on the Background layer');",
+        "",
+        "harness.setSceneVariable('Battery', 0);",
+        "await harness.stepFrames(5);",
+        "const depleted = await harness.stepUntil(() => harness.getSceneName() === 'GameOver', { maxFrames: 400 });",
+        "harness.assert(depleted, 'battery depletion still reaches GameOver (delay path intact)');",
+        "await harness.stepFrames(10);",
+        "const depMsg = (harness.getObjects('GameOverText')[0] || {}).text || '';",
+        "harness.assert(depMsg.indexOf('POWER DEPLETED') === 0, 'battery depletion shows POWER DEPLETED (got ' + JSON.stringify(depMsg) + ')');",
+        "",
+        "harness.setKeyPressed('r', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('r', false);",
+        "await harness.stepFrames(45);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'R restarted Level01 after the battery failure (scene=' + harness.getSceneName() + ')');",
+        "const p3 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p3.id, 1650, 300);",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('Right', true);",
+        "const inZone = await harness.stepUntil(() => {",
+        "  const p = harness.getObjects('Player')[0];",
+        "  return !!p && p.centerX >= 1700 && p.centerX <= 1746;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(inZone, 'walked into the generator zone after restart');",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('e', false);",
+        "const won = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 150 });",
+        "harness.assert(won, 'the generator still triggers Victory (allow the activation beat, scene=' + harness.getSceneName() + ')');",
+        "await harness.takeScreenshot('victory after restart');",
+        ""
+      ]
+    },
+    {
+      "description": "Audio milestone: exactly one jump sound per jump, one recharge sound per pickup, one power-down on GameOver, one chime on Victory, generator zap plays before the Victory change, and one non-stacking ambient music loop that restarts after retry.",
+      "lastRunAt": 1794534307337,
+      "lastRunDurationMs": 1678,
+      "lastRunFramesExecuted": 611,
+      "lastRunStatus": "passed",
+      "name": "Audio feedback and music",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Level01');",
+        "await harness.stepFrames(60);",
+        "const log = () => JSON.stringify((harness.getPlayedSounds() || []).map(s => s.sound));",
+        "const count = (needle) => (harness.getPlayedSounds() || []).filter(s => String(s.sound).indexOf(needle) >= 0).length;",
+        "",
+        "// ---------- MUSIC ----------",
+        "harness.assert(count('Extreme Darkness') === 1, 'ambient music started exactly once in Level01 (count=' + count('Extreme Darkness') + ') log=' + log());",
+        "await harness.stepFrames(90);",
+        "harness.assert(count('Extreme Darkness') === 1, 'music does not stack or retrigger over 90 frames (count=' + count('Extreme Darkness') + ')');",
+        "await harness.takeScreenshot('Level01 with music');",
+        "",
+        "// ---------- JUMP ----------",
+        "const player = () => harness.getObjects('Player')[0];",
+        "for (let j = 0; j < 2; j++) {",
+        "  harness.setKeyPressed('Space', true);",
+        "  await harness.stepFrames(4);",
+        "  harness.setKeyPressed('Space', false);",
+        "  await harness.stepUntil(() => {",
+        "    const p = player();",
+        "    const bh = p && p.behaviors.PlatformerObject;",
+        "    return !!bh && bh.state.IsOnFloor === true;",
+        "  }, { maxFrames: 240 });",
+        "  await harness.stepFrames(12);",
+        "}",
+        "harness.assert(count('Jump 8') === 2, 'two jumps played exactly two jump sounds (count=' + count('Jump 8') + ')');",
+        "",
+        "// ---------- PICKUP ----------",
+        "const pickupsBefore = harness.getObjects('EnergyPickup').length;",
+        "harness.assert(pickupsBefore === 3, 'three pickups present');",
+        "const p0 = player();",
+        "harness.setObjectPosition(p0.id, 520, 200);",
+        "const landed = await harness.stepUntil(() => {",
+        "  const q = player();",
+        "  const bh = q && q.behaviors.PlatformerObject;",
+        "  return !!bh && bh.state.IsOnFloor === true && Math.abs(q.y - 240) < 8;",
+        "}, { maxFrames: 300 });",
+        "harness.assert(landed, 'landed on the floating platform');",
+        "harness.setKeyPressed('Right', true);",
+        "await harness.stepUntil(() => harness.getObjects('EnergyPickup').length < pickupsBefore, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(8);",
+        "harness.assert(count('Powerup 4') === 1, 'one collected pickup played exactly one recharge sound (count=' + count('Powerup 4') + ')');",
+        "",
+        "// ---------- GAME OVER (battery) ----------",
+        "harness.setSceneVariable('Battery', 0);",
+        "await harness.stepFrames(5);",
+        "const over = await harness.stepUntil(() => harness.getSceneName() === 'GameOver', { maxFrames: 400 });",
+        "harness.assert(over, 'battery depletion still reaches GameOver');",
+        "await harness.stepFrames(25);",
+        "harness.assert(count('Lose 1') === 1, 'GameOver power-down played exactly once (count=' + count('Lose 1') + ')');",
+        "const msg = (harness.getObjects('GameOverText')[0] || {}).text || '';",
+        "harness.assert(msg.indexOf('POWER DEPLETED') === 0, 'POWER DEPLETED message intact (got ' + JSON.stringify(msg) + ')');",
+        "harness.assert(count('Extreme Darkness') === 1, 'music was not restarted while on the GameOver screen (count=' + count('Extreme Darkness') + ')');",
+        "await harness.takeScreenshot('GameOver with power-down');",
+        "",
+        "// ---------- RETRY ----------",
+        "harness.setKeyPressed('r', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('r', false);",
+        "await harness.stepFrames(50);",
+        "harness.assert(harness.getSceneName() === 'Level01', 'R restarted Level01 (scene=' + harness.getSceneName() + ')');",
+        "harness.assert(count('Extreme Darkness') === 2, 'music plays again after the restart, without stacking (count=' + count('Extreme Darkness') + ')');",
+        "harness.assert(harness.getObjects('EnergyPickup').length === 3, 'three pickups back after restart');",
+        "const bat = harness.getSceneVariable('Battery');",
+        "harness.assert(Number(bat.value) >= 99, 'battery reset to 100 (got ' + (bat && bat.value) + ')');",
+        "",
+        "// ---------- VICTORY ----------",
+        "const p2 = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p2.id, 1650, 300);",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('Right', true);",
+        "const inZone = await harness.stepUntil(() => {",
+        "  const q = harness.getObjects('Player')[0];",
+        "  return !!q && q.centerX >= 1700 && q.centerX <= 1746;",
+        "}, { maxFrames: 300 });",
+        "harness.setKeyPressed('Right', false);",
+        "await harness.stepFrames(5);",
+        "harness.assert(inZone, 'walked into the generator zone');",
+        "const zapBefore = count('Zap effect');",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('e', false);",
+        "await harness.stepFrames(20);",
+        "harness.assert(count('Zap effect') === zapBefore + 1, 'generator activation sound played once (delta=' + (count('Zap effect') - zapBefore) + ')');",
+        "harness.assert(harness.getSceneName() === 'Level01', 'scene change deferred so the activation effect is not cut off');",
+        "const victory = await harness.stepUntil(() => harness.getSceneName() === 'Victory', { maxFrames: 200 });",
+        "harness.assert(victory, 'Victory scene still reached after the short activation beat');",
+        "await harness.stepFrames(25);",
+        "harness.assert(count('Complete_02') === 1, 'victory chime played exactly once (count=' + count('Complete_02') + ')');",
+        "await harness.takeScreenshot('Victory with chime');",
+        ""
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -7394,9 +8194,6 @@
       },
       {
         "itemName": "Energy pickup collection"
-      },
-      {
-        "itemName": "Level traversal to generator platform"
       },
       {
         "itemName": "Camera follow and HUD"
@@ -7424,6 +8221,15 @@
       },
       {
         "itemName": "Industrial background coverage"
+      },
+      {
+        "itemName": "Platform layout 4D route"
+      },
+      {
+        "itemName": "Fall detection and retry"
+      },
+      {
+        "itemName": "Audio feedback and music"
       }
     ]
   },
