@@ -1089,7 +1089,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.20003572340034131,
+        "zoomFactor": 0.45833603221497815,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1097,10 +1097,15 @@
       "objectsGroups": [],
       "variables": [
         {
+          "name": "LevelMinX",
+          "type": "number",
+          "value": -185
+        },
+        {
           "name": "LevelWidth",
           "persistentUuid": "cff1beb6-5deb-4ae9-b51f-c97426fdc034",
           "type": "number",
-          "value": 4200
+          "value": 5000
         },
         {
           "name": "CamTargetY",
@@ -1138,8 +1143,8 @@
           "name": "Player",
           "persistentUuid": "856858de-3edc-4714-ade7-96ab2f7d7173",
           "width": 120,
-          "x": 224,
-          "y": 194,
+          "x": -135,
+          "y": 221,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1154,9 +1159,9 @@
           "layer": "",
           "name": "Ground",
           "persistentUuid": "653b1262-c719-419e-a6cb-2a2c7b381307",
-          "width": 540,
-          "x": -1,
-          "y": 475,
+          "width": 636,
+          "x": -157,
+          "y": 473,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -1204,8 +1209,8 @@
           "name": "EnergyPickup",
           "persistentUuid": "e1b4e2ba-f5fc-4fd8-96f1-bc0692dce01a",
           "width": 0,
-          "x": 625,
-          "y": 287,
+          "x": 1056,
+          "y": 409,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1285,8 +1290,8 @@
           "name": "Generator",
           "persistentUuid": "5cf95031-4fb0-4202-9db9-1f8e7e8214b6",
           "width": 174,
-          "x": 1748,
-          "y": 301,
+          "x": 4679,
+          "y": 225,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1295,15 +1300,16 @@
         {
           "angle": 0,
           "customSize": true,
+          "depth": 1,
           "height": 70,
           "keepRatio": true,
           "layer": "",
           "name": "GeneratorTrigger",
           "opacity": 0,
           "persistentUuid": "ca8559ae-683c-4bed-9231-6d488bbdc885",
-          "width": 45,
-          "x": 1700,
-          "y": 330,
+          "width": 56,
+          "x": 4661,
+          "y": 260,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1319,8 +1325,8 @@
           "name": "GeneratorPrompt",
           "persistentUuid": "366f65bd-782b-4dfd-80aa-5bcac2139906",
           "width": 260,
-          "x": 1560,
-          "y": 240,
+          "x": 4609,
+          "y": 157,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1335,8 +1341,8 @@
           "name": "EnergyPickup",
           "persistentUuid": "286c35e3-f108-4c44-a697-80e41a97bddf",
           "width": 0,
-          "x": 1150,
-          "y": 151,
+          "x": 3655,
+          "y": 337,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1351,8 +1357,8 @@
           "name": "EnergyPickup",
           "persistentUuid": "423cc575-6dfb-4a23-855c-0a07252476d8",
           "width": 0,
-          "x": 1430,
-          "y": 221,
+          "x": 1956,
+          "y": 340,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1361,14 +1367,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 810,
+          "depth": 1,
+          "height": 1158,
           "keepRatio": true,
           "layer": "Background",
           "name": "PowerStationBackground",
           "persistentUuid": "c3160397-cc57-486b-93c9-a4813dd22d56",
-          "width": 2430,
-          "x": -185,
-          "y": -140,
+          "width": 2541,
+          "x": -291,
+          "y": -290,
           "zOrder": -1000,
           "numberProperties": [],
           "stringProperties": [],
@@ -1377,15 +1384,16 @@
         {
           "angle": 0,
           "customSize": true,
+          "depth": 1,
           "flippedX": true,
-          "height": 810,
+          "height": 1164,
           "keepRatio": true,
           "layer": "Background",
           "name": "PowerStationBackground",
           "persistentUuid": "c7635628-b80e-4077-ab96-ef6793f506e4",
-          "width": 2430,
+          "width": 2711,
           "x": 2245,
-          "y": -140,
+          "y": -290,
           "zOrder": -1000,
           "numberProperties": [],
           "stringProperties": [],
@@ -1474,15 +1482,169 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 94,
+          "depth": 0.44027767838,
+          "height": 39.1847133759,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
           "persistentUuid": "3ec9b36b-15e7-421b-8d6b-008e9eef3782",
-          "width": 220,
-          "x": 2440,
-          "y": 390,
+          "width": 69.1235955057,
+          "x": 2739,
+          "y": 310,
           "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "d0dfaa19-777d-4ce8-824e-1d17c20c81d0",
+          "width": 130,
+          "x": 2421,
+          "y": 357,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0.808691308693,
+          "height": 62.2692307695,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "8594e7c8-e7dc-4ba3-aed8-ccdde942c96e",
+          "width": 105.129870129,
+          "x": 2988,
+          "y": 274,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "10819a6c-a9dd-488d-9105-d5e1a0534028",
+          "width": 130,
+          "x": 3191,
+          "y": 393,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "9d6fa91b-47c0-4c72-9f54-888dad788c21",
+          "width": 130,
+          "x": 3607,
+          "y": 420,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "cc5e4e61-af7b-4c98-8404-ddc47feeeaa2",
+          "width": 130,
+          "x": 3407,
+          "y": 240,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "65b70861-31e0-43dd-ac5e-d672ca5c4234",
+          "width": 130,
+          "x": 3819,
+          "y": 288,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "96c77b0d-2812-4252-a8ba-516e5908c983",
+          "width": 130,
+          "x": 4073,
+          "y": 212,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 87,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ground",
+          "persistentUuid": "b7dda08c-39e8-49b1-97cf-d0c025a2f67d",
+          "width": 407,
+          "x": 4465,
+          "y": 332,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 1167,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "PowerStationBackground",
+          "persistentUuid": "e3bbd748-671e-473b-80b6-e50c4c50d1ca",
+          "width": 2553,
+          "x": 4950,
+          "y": -290,
+          "zOrder": -1000,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2296,7 +2458,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.145,
+                  "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
@@ -3064,7 +3226,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.2,
+                  "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
@@ -5634,7 +5796,7 @@
               "parameters": [
                 "Battery",
                 "=",
-                "50"
+                "5"
               ]
             },
             {
@@ -5939,7 +6101,7 @@
           "comment": "CAMERA - follow the Player horizontally, clamped to the level bounds (viewport width from SceneWindowWidth)"
         },
         {
-          "aiGeneratedEventId": "01M7BKKCEGPD8XKCXCWV68JVWY",
+          "aiGeneratedEventId": "01M7CCZ8XB4RN49H66NV60QFX3",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5954,24 +6116,12 @@
           "actions": [
             {
               "type": {
-                "value": "SetCameraY"
-              },
-              "parameters": [
-                "",
-                "=",
-                "400",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
                 "CamTargetX",
                 "=",
-                "min(max(Player.CenterX(), SceneWindowWidth()/2), LevelWidth - SceneWindowWidth()/2)"
+                "min(max(Player.CenterX(), LevelMinX + SceneWindowWidth()/2), LevelWidth - SceneWindowWidth()/2)"
               ]
             },
             {
@@ -5983,11 +6133,35 @@
                 "=",
                 "400"
               ]
+            },
+            {
+              "type": {
+                "value": "SetCameraX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamTargetX",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "400",
+                "",
+                ""
+              ]
             }
           ]
         },
         {
-          "aiGeneratedEventId": "01M7BKKCEGPD8XKCXCWV68JVWY",
+          "aiGeneratedEventId": "01M7CCZ8XB4RN49H66NV60QFX3",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -5998,7 +6172,7 @@
               "parameters": [
                 "CamTargetX",
                 "=",
-                "min(max(Player.CenterX(), SceneWindowWidth()/2), LevelWidth - SceneWindowWidth()/2)"
+                "min(max(Player.CenterX(), LevelMinX + SceneWindowWidth()/2), LevelWidth - SceneWindowWidth()/2)"
               ]
             },
             {
@@ -7487,10 +7661,10 @@
     },
     {
       "description": "Camera follows the Player horizontally with clamped bounds (480 / 3720 through LevelWidth) and the HUD stays on the fixed UI layer.",
-      "lastRunAt": 1794614483366,
-      "lastRunDurationMs": 602,
-      "lastRunFramesExecuted": 158,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794638880894,
+      "lastRunDurationMs": 613,
+      "lastRunFramesExecuted": 31,
+      "lastRunStatus": "failed",
       "name": "Camera follow and HUD",
       "type": "gameplay",
       "source": [
@@ -7527,10 +7701,10 @@
     },
     {
       "description": "Vertical dead-zone camera within its clamps: no bounce on small jumps, follows the player up (never above 130) on the high platform, returns to 400 after landing on the floor, horizontal follow correct, HUD fixed.",
-      "lastRunAt": 1794614416392,
-      "lastRunDurationMs": 537,
+      "lastRunAt": 1794638906072,
+      "lastRunDurationMs": 608,
       "lastRunFramesExecuted": 312,
-      "lastRunStatus": "passed",
+      "lastRunStatus": "failed",
       "name": "Vertical camera dead zone",
       "type": "gameplay",
       "source": [
@@ -7674,10 +7848,10 @@
     },
     {
       "description": "Victory objective: the player can stand on the final platform, walk into the generator zone with battery, see the prompt and trigger Victory with E (waiting for the activation sound beat).",
-      "lastRunAt": 1794612476707,
-      "lastRunDurationMs": 576,
-      "lastRunFramesExecuted": 122,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794636041151,
+      "lastRunDurationMs": 634,
+      "lastRunFramesExecuted": 56,
+      "lastRunStatus": "failed",
       "name": "Generator victory objective",
       "type": "gameplay",
       "source": [
@@ -8037,10 +8211,10 @@
     },
     {
       "description": "Fall below the level -> GameOver with SIGNAL LOST; R retries into a fully reset Level01 (Battery 50, 3 pickups, start position, camera/background); battery depletion still shows POWER DEPLETED; generator still wins.",
-      "lastRunAt": 1794614638415,
-      "lastRunDurationMs": 1469,
-      "lastRunFramesExecuted": 492,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794636074551,
+      "lastRunDurationMs": 1055,
+      "lastRunFramesExecuted": 616,
+      "lastRunStatus": "failed",
       "name": "Fall detection and retry",
       "type": "gameplay",
       "source": [
@@ -8210,10 +8384,10 @@
     },
     {
       "description": "Stage S1 (re-pointed to S4/S5 geometry): starts at 50 battery, drains 1 per 1.5s, pickups add 20 capped at 100 (collected by dropping through them while they float during construction), zero still reaches GameOver, retry resets to 50; HUD tracks the value.",
-      "lastRunAt": 1794614579085,
-      "lastRunDurationMs": 895,
-      "lastRunFramesExecuted": 466,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794636072800,
+      "lastRunDurationMs": 929,
+      "lastRunFramesExecuted": 225,
+      "lastRunStatus": "failed",
       "name": "Battery baseline 50",
       "type": "gameplay",
       "source": [
@@ -8291,10 +8465,10 @@
     },
     {
       "description": "Stage S2+S3: camera clamps at 480 and 3720 through the LevelWidth variable, two mirrored background tiles sit flush and cover the start/mid/far-right viewports, background layer camera stays synced, and gameplay/HUD/battery are untouched.",
-      "lastRunAt": 1794614641207,
-      "lastRunDurationMs": 798,
-      "lastRunFramesExecuted": 166,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794638862820,
+      "lastRunDurationMs": 736,
+      "lastRunFramesExecuted": 61,
+      "lastRunStatus": "failed",
       "name": "Camera bounds and background coverage",
       "type": "gameplay",
       "source": [
@@ -8449,10 +8623,10 @@
     },
     {
       "description": "Stage S5: full walking route from the real start through the shaft; M8 arc measured chained and settled with apex screenshots; camera step instrumentation; no reliance on the temporary old generator floor.",
-      "lastRunAt": 1794614388974,
-      "lastRunDurationMs": 997,
-      "lastRunFramesExecuted": 937,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794636059330,
+      "lastRunDurationMs": 434,
+      "lastRunFramesExecuted": 41,
+      "lastRunStatus": "failed",
       "name": "S5 collapsed shaft",
       "type": "gameplay",
       "source": [
