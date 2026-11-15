@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "Level01",
   "gdVersion": {
     "build": 287,
     "major": 5,
@@ -25,7 +25,7 @@
     "author": "",
     "windowWidth": 960,
     "windowHeight": 540,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "C:\\Users\\lloyd\\Desktop\\GDevelop Projects\\Last Spark ver2",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -1050,6 +1050,118 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "Last Spark BatteryPack.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Last Spark BatteryPack.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "airy.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "airy.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "sector.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "sector.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "Pixel Art Battery Pickup Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pixel Art Battery Pickup Sprite.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "tilemap.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tilemap.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/tiled_industrial platform center.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tiled_industrial platform center.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Industrial Platformer Pack (110 assets)/PNG/Retina/ca47e97bdd8bab0411d72164191dd8406065208ed50ade5597e76964abdeb101_tiled_industrial platform center.png",
+          "name": "tiled_industrial platform center.png"
+        }
+      },
+      {
+        "file": "tile_0000.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tile_0000.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "tile_0109.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tile_0109.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "tile_0012.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tile_0012.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "IndustrialPlatformVisual.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "IndustrialPlatformVisual.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "IndustrialPlatformVisual2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "IndustrialPlatformVisual2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "LAST_SPARK_steel_fill_18x18.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LAST_SPARK_steel_fill_18x18.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "LAST_SPARK_steel_top_18x5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LAST_SPARK_steel_top_18x5.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1061,6 +1173,7 @@
   "variables": [
     {
       "name": "FailReason",
+      "persistentUuid": "cea46a8c-1764-4a1f-ac0d-80d0d3207bb7",
       "type": "string",
       "value": ""
     }
@@ -1089,7 +1202,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.45833603221497815,
+        "zoomFactor": 0.4583360322149792,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1098,6 +1211,7 @@
       "variables": [
         {
           "name": "LevelMinX",
+          "persistentUuid": "0d54f621-dd20-4656-b2b0-6abbd49660c5",
           "type": "number",
           "value": -185
         },
@@ -1155,12 +1269,13 @@
           "customSize": true,
           "depth": 1,
           "height": 94,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
           "persistentUuid": "653b1262-c719-419e-a6cb-2a2c7b381307",
-          "width": 636,
-          "x": -157,
+          "width": 635,
+          "x": -156,
           "y": 473,
           "zOrder": 2,
           "numberProperties": [],
@@ -1172,6 +1287,7 @@
           "customSize": true,
           "depth": 1,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1202,15 +1318,15 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
+          "customSize": true,
+          "depth": 1,
+          "height": 34,
           "layer": "",
           "name": "EnergyPickup",
           "persistentUuid": "e1b4e2ba-f5fc-4fd8-96f1-bc0692dce01a",
-          "width": 0,
-          "x": 1056,
-          "y": 409,
+          "width": 35,
+          "x": 1061,
+          "y": 429,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -1220,6 +1336,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1236,6 +1353,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1252,6 +1370,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1268,6 +1387,7 @@
           "angle": 0,
           "customSize": true,
           "height": 94,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1334,38 +1454,6 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "EnergyPickup",
-          "persistentUuid": "286c35e3-f108-4c44-a697-80e41a97bddf",
-          "width": 0,
-          "x": 3655,
-          "y": 337,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "EnergyPickup",
-          "persistentUuid": "423cc575-6dfb-4a23-855c-0a07252476d8",
-          "width": 0,
-          "x": 1956,
-          "y": 340,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": true,
           "depth": 1,
           "height": 1158,
@@ -1403,6 +1491,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1419,6 +1508,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1435,6 +1525,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1451,6 +1542,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1467,6 +1559,7 @@
           "angle": 0,
           "customSize": true,
           "height": 39,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1484,6 +1577,7 @@
           "customSize": true,
           "depth": 0.44027767838,
           "height": 39.1847133759,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1501,6 +1595,7 @@
           "customSize": true,
           "depth": 1,
           "height": 77,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1518,6 +1613,7 @@
           "customSize": true,
           "depth": 0.808691308693,
           "height": 62.2692307695,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1535,6 +1631,7 @@
           "customSize": true,
           "depth": 1,
           "height": 77,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1552,6 +1649,7 @@
           "customSize": true,
           "depth": 1,
           "height": 77,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1569,6 +1667,7 @@
           "customSize": true,
           "depth": 1,
           "height": 77,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1586,6 +1685,7 @@
           "customSize": true,
           "depth": 1,
           "height": 77,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1603,6 +1703,7 @@
           "customSize": true,
           "depth": 1,
           "height": 77,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1620,6 +1721,7 @@
           "customSize": true,
           "depth": 1,
           "height": 87,
+          "hidden": true,
           "keepRatio": true,
           "layer": "",
           "name": "Ground",
@@ -1645,6 +1747,679 @@
           "x": 4950,
           "y": -290,
           "zOrder": -1000,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 34,
+          "layer": "",
+          "name": "EnergyPickup",
+          "persistentUuid": "578ce8c7-894c-412e-b65c-6a6de4c9cf9a",
+          "width": 35,
+          "x": 3653,
+          "y": 365,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 34,
+          "layer": "",
+          "name": "EnergyPickup",
+          "persistentUuid": "398d3421-4b6b-43b0-9368-e49b02867869",
+          "width": 35,
+          "x": 1852,
+          "y": 349,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 94,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "9978c842-ae8d-4c87-bd58-1a1584da2f8f",
+          "width": 636,
+          "x": -157,
+          "y": 473,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "2a67442f-27aa-4ec2-ba6e-f970aa7c76e0",
+          "width": 140,
+          "x": 600,
+          "y": 400,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "c51e8841-e62e-4dfd-8540-24e73c8c6af6",
+          "width": 120,
+          "x": 815,
+          "y": 340,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "11cbb1ce-c61a-4fbc-85d4-a6c22e782069",
+          "width": 100,
+          "x": 1035,
+          "y": 265,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "2c050859-4adf-41ce-ae20-f369db6a869a",
+          "width": 150,
+          "x": 1260,
+          "y": 390,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 94,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "3e65502f-b070-40f9-bb82-9e5af0d29a68",
+          "width": 440,
+          "x": 1620,
+          "y": 400,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "699d14aa-f758-4658-a9a6-742b7c712c96",
+          "width": 130,
+          "x": 1010,
+          "y": 470,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "dccf2511-bcb5-41a0-90df-c81b10d9f0d3",
+          "width": 120,
+          "x": 1540,
+          "y": 290,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "60df7ba0-62a9-4ee6-9311-5a9ce3007c03",
+          "width": 95,
+          "x": 1725,
+          "y": 215,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "429bb41b-6ca1-46b8-a31c-c7597a5f7a51",
+          "width": 85,
+          "x": 1920,
+          "y": 165,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "4415a5ef-0fa9-4553-a177-1912c1693808",
+          "width": 110,
+          "x": 2130,
+          "y": 240,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 39,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "19c07d89-d6e5-4766-8db1-e04e984541c2",
+          "width": 69,
+          "x": 2739,
+          "y": 310,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "561d628d-fd28-47d1-b2fe-f00dfe49f3ee",
+          "width": 130,
+          "x": 2421,
+          "y": 357,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 62,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "9bb070e0-fdf8-4014-a3ff-5df12b026fa1",
+          "width": 105,
+          "x": 2988,
+          "y": 274,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "42e816b3-9e30-474b-a6aa-882b07ee48ef",
+          "width": 130,
+          "x": 3191,
+          "y": 393,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "be6923a0-bbba-4c08-ad30-5b0520a8fb10",
+          "width": 130,
+          "x": 3607,
+          "y": 420,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "2eccaedf-17da-4c1a-8fce-b4f2648079bd",
+          "width": 130,
+          "x": 3407,
+          "y": 240,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "14458698-8e93-4ea1-8a4e-2c8d81e9c2a5",
+          "width": 130,
+          "x": 3819,
+          "y": 288,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 77,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "1d96c8b3-4d0f-44a8-8229-9a803c99354c",
+          "width": 130,
+          "x": 4073,
+          "y": 212,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 87,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "fea18942-b6a6-42af-a2a1-4fcb026c1708",
+          "width": 407,
+          "x": 4465,
+          "y": 332,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "a9165389-a47c-4be2-8450-b87bc398f928",
+          "width": 636,
+          "x": -157,
+          "y": 473,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "64126af6-8196-4843-8450-d1cf01e740f6",
+          "width": 140,
+          "x": 600,
+          "y": 400,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "442814d0-8f29-4fd8-bcea-4ed94e475299",
+          "width": 120,
+          "x": 815,
+          "y": 340,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "bc81774f-960a-4112-8bb5-148d02e33690",
+          "width": 100,
+          "x": 1035,
+          "y": 265,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "2cf2ba5f-7573-47c8-809c-9c1125a0a520",
+          "width": 150,
+          "x": 1260,
+          "y": 390,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "5cbb97a1-a8a5-4614-8b89-4c7fa332068b",
+          "width": 440,
+          "x": 1620,
+          "y": 400,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "5a422a5e-523c-4591-9841-b2587d259bbc",
+          "width": 130,
+          "x": 1010,
+          "y": 470,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "bc32a51b-d811-469b-aebd-adb9d1752da5",
+          "width": 120,
+          "x": 1540,
+          "y": 290,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "7b0218f3-a5df-45ab-a696-ee5ac263b09f",
+          "width": 95,
+          "x": 1725,
+          "y": 215,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "5989799c-4a15-423e-b8d1-04beca3b0ac0",
+          "width": 85,
+          "x": 1920,
+          "y": 165,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "8ce90cf6-274a-4ac0-b29f-2f1415bf1787",
+          "width": 110,
+          "x": 2130,
+          "y": 240,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "da5ef306-886c-47cb-a2f8-68d0f7ad6ad5",
+          "width": 69,
+          "x": 2739,
+          "y": 310,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "0372c05f-37f6-4ae2-9861-77b333f170de",
+          "width": 130,
+          "x": 2421,
+          "y": 357,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "c96f64ba-2101-4d85-9348-2d45c5806518",
+          "width": 105,
+          "x": 2988,
+          "y": 274,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "49917c30-e932-4cd2-b1e3-95166c7ef38d",
+          "width": 130,
+          "x": 3191,
+          "y": 393,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "2e7b6744-bf61-47e3-b1b8-94191b034b52",
+          "width": 130,
+          "x": 3607,
+          "y": 420,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "a9024b21-0995-46c9-9885-c4a52527aa87",
+          "width": 130,
+          "x": 3407,
+          "y": 240,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "1c7816ad-ae9f-4f3b-82aa-7a4afd77bfba",
+          "width": 130,
+          "x": 3819,
+          "y": 288,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "f3c80fef-d02e-4038-836a-bef93e8be063",
+          "width": 130,
+          "x": 4073,
+          "y": 212,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 5,
+          "keepRatio": true,
+          "layer": "",
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "f39dcf88-c3bf-464e-a84e-9ee97f1d6a10",
+          "width": 407,
+          "x": 4465,
+          "y": 332,
+          "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1698,14 +2473,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1734,14 +2509,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1770,14 +2545,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1806,14 +2581,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1842,14 +2617,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1878,14 +2653,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1914,14 +2689,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1950,14 +2725,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -1986,14 +2761,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2022,14 +2797,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2058,14 +2833,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2094,14 +2869,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2130,14 +2905,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2166,14 +2941,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2202,14 +2977,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2238,14 +3013,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2274,14 +3049,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2310,14 +3085,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2346,14 +3121,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2382,14 +3157,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2418,14 +3193,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2466,14 +3241,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2502,14 +3277,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2538,14 +3313,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2574,14 +3349,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2610,14 +3385,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2646,14 +3421,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2682,14 +3457,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2718,14 +3493,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2754,14 +3529,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2790,14 +3565,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2826,14 +3601,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2862,14 +3637,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2898,14 +3673,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2934,14 +3709,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -2970,14 +3745,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -3006,14 +3781,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -3042,14 +3817,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -3078,14 +3853,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -3114,14 +3889,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -3150,14 +3925,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -3186,14 +3961,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4002,14 +4777,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4038,14 +4813,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4074,14 +4849,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4110,14 +4885,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4146,14 +4921,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4182,14 +4957,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4218,14 +4993,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4254,14 +5029,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4290,14 +5065,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4326,14 +5101,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4362,14 +5137,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4398,14 +5173,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4434,14 +5209,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4470,14 +5245,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4506,14 +5281,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4542,14 +5317,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4578,14 +5353,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4614,14 +5389,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4650,14 +5425,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4686,14 +5461,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4722,14 +5497,14 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 510
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 327,
+                        "y": 331
                       },
                       "customCollisionMask": [
                         [
@@ -4844,9 +5619,9 @@
           "textAlignment": "left",
           "characterSize": 20,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
             "bold": false,
@@ -4868,7 +5643,7 @@
             "verticalTextAlignment": "top",
             "characterSize": 20,
             "lineHeight": 0,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
@@ -4887,12 +5662,12 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": true,
+                  "looping": false,
                   "timeBetweenFrames": 0.025,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Bolt Red Powerup.png",
+                      "image": "Pixel Art Battery Pickup Sprite.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4908,20 +5683,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 0,
-                            "y": 0
+                            "x": 469,
+                            "y": 287
                           },
                           {
-                            "x": 34,
-                            "y": 0
+                            "x": 785,
+                            "y": 287
                           },
                           {
-                            "x": 34,
-                            "y": 33
+                            "x": 785,
+                            "y": 1056
                           },
                           {
-                            "x": 0,
-                            "y": 33
+                            "x": 469,
+                            "y": 1056
                           }
                         ]
                       ]
@@ -5206,6 +5981,30 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "height": 18,
+          "name": "IndustrialPlatformVisual",
+          "persistentUuid": "2c7777af-6e30-4070-a5db-9dd4fa131cfe",
+          "texture": "LAST_SPARK_steel_fill_18x18.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 18,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "height": 5,
+          "name": "IndustrialPlatformTopTrim",
+          "persistentUuid": "36ec879c-4394-40f0-9db5-95bb15f86cc7",
+          "texture": "LAST_SPARK_steel_top_18x5.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 18,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -5216,6 +6015,12 @@
           },
           {
             "objectName": "Ground"
+          },
+          {
+            "objectName": "IndustrialPlatformVisual"
+          },
+          {
+            "objectName": "IndustrialPlatformTopTrim"
           },
           {
             "objectName": "BatteryText"
@@ -5371,7 +6176,7 @@
           "comment": "SPRINT - holding Shift raises the max speed (movement settings in the editor are unchanged)"
         },
         {
-          "aiGeneratedEventId": "01M71NYP6X7QF7VR86AHQTYX2F",
+          "aiGeneratedEventId": "01M7E9KT36AQWW1Z75VT062FKJ",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5410,7 +6215,7 @@
                 "Player",
                 "PlatformerObject",
                 "=",
-                "400"
+                "250"
               ]
             }
           ]
@@ -5460,25 +6265,16 @@
           "comment": "AUDIO - one jump sound per successful jump (grounded key press, before the jump is simulated)."
         },
         {
-          "aiGeneratedEventId": "01M79975932PZB6JG0DHDBKPXA",
+          "aiGeneratedEventId": "01M7E9MNXK4BQJYPA3Y94Q56WR",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "value": "PlatformBehavior::IsOnFloor"
+                "value": "PlatformBehavior::IsJumping"
               },
               "parameters": [
                 "Player",
                 "PlatformerObject"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyFromTextJustPressed"
-              },
-              "parameters": [
-                "",
-                "\"Space\""
               ]
             },
             {
@@ -5497,7 +6293,7 @@
                 "",
                 "Jump 8.aac",
                 "no",
-                "65",
+                "15",
                 "1"
               ]
             }
@@ -5593,7 +6389,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M71NYP6X7QF7VR86AHQTYX2F",
+          "aiGeneratedEventId": "01M7E9M5EQ7X22AH93728WVK5E",
           "type": "BuiltinCommonInstructions::Else",
           "conditions": [
             {
@@ -5676,7 +6472,7 @@
                 "Player",
                 "Animation",
                 "=",
-                "\"Run\""
+                "\"Walk\""
               ]
             }
           ]
@@ -5796,7 +6592,7 @@
               "parameters": [
                 "Battery",
                 "=",
-                "5"
+                "50"
               ]
             },
             {
@@ -6081,7 +6877,7 @@
                 "",
                 "Powerup 4.aac",
                 "no",
-                "60",
+                "10",
                 "1"
               ]
             }
@@ -6567,11 +7363,11 @@
               },
               "parameters": [
                 "",
-                "Extreme Darkness.aac",
+                "sector.mp3",
                 "\"Music\"",
                 "yes",
-                "30",
-                "1"
+                "80",
+                "2"
               ]
             }
           ]
@@ -7495,8 +8291,8 @@
   "tests": [
     {
       "description": "Player falls onto the floor, walks left/right with arrows and A/D, and jumps with Space reaching a clear height.",
-      "lastRunAt": 1794530198467,
-      "lastRunDurationMs": 570,
+      "lastRunAt": 1794713143523,
+      "lastRunDurationMs": 1156,
       "lastRunFramesExecuted": 483,
       "lastRunStatus": "passed",
       "name": "Player platformer controls",
@@ -7561,10 +8357,10 @@
     },
     {
       "description": "Verifies Idle/Walk/Run/Jump animation states and that sprint (Shift) is faster than walk, staying on the shortened starting floor.",
-      "lastRunAt": 1794612475441,
-      "lastRunDurationMs": 415,
-      "lastRunFramesExecuted": 137,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794702479000,
+      "lastRunDurationMs": 478,
+      "lastRunFramesExecuted": 71,
+      "lastRunStatus": "failed",
       "name": "Player animation states",
       "type": "gameplay",
       "source": [
@@ -7757,10 +8553,10 @@
     },
     {
       "description": "Smoothed camera: direction changes with the camera unclamped, full jump arc from the highest platform M8 fully visible, descent to the floor, horizontal clamp 3720 via LevelWidth, HUD fixed.",
-      "lastRunAt": 1794614622328,
-      "lastRunDurationMs": 950,
-      "lastRunFramesExecuted": 562,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794703995001,
+      "lastRunDurationMs": 391,
+      "lastRunFramesExecuted": 161,
+      "lastRunStatus": "failed",
       "name": "Smoothed camera and jump arc visibility",
       "type": "gameplay",
       "source": [
@@ -8039,10 +8835,10 @@
     },
     {
       "description": "Three pickups placed, each collectible independently with +20 battery capped at 100; victory intact.",
-      "lastRunAt": 1794547787582,
-      "lastRunDurationMs": 708,
-      "lastRunFramesExecuted": 259,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794709459733,
+      "lastRunDurationMs": 593,
+      "lastRunFramesExecuted": 31,
+      "lastRunStatus": "failed",
       "name": "Three energy pickups",
       "type": "gameplay",
       "source": [
@@ -8211,9 +9007,9 @@
     },
     {
       "description": "Fall below the level -> GameOver with SIGNAL LOST; R retries into a fully reset Level01 (Battery 50, 3 pickups, start position, camera/background); battery depletion still shows POWER DEPLETED; generator still wins.",
-      "lastRunAt": 1794636074551,
-      "lastRunDurationMs": 1055,
-      "lastRunFramesExecuted": 616,
+      "lastRunAt": 1794710170377,
+      "lastRunDurationMs": 972,
+      "lastRunFramesExecuted": 303,
       "lastRunStatus": "failed",
       "name": "Fall detection and retry",
       "type": "gameplay",
@@ -8286,10 +9082,10 @@
     },
     {
       "description": "Audio milestone (re-pointed to S4/S5 geometry): one jump sound per jump, one recharge sound per pickup, one power-down on GameOver, one chime on Victory, generator zap before the Victory change, single non-stacking ambient loop that restarts after retry.",
-      "lastRunAt": 1794614600444,
-      "lastRunDurationMs": 1435,
-      "lastRunFramesExecuted": 647,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794702480088,
+      "lastRunDurationMs": 355,
+      "lastRunFramesExecuted": 61,
+      "lastRunStatus": "failed",
       "name": "Audio feedback and music",
       "type": "gameplay",
       "source": [
