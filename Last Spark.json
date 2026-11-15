@@ -1378,7 +1378,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.2395833333333472,
+        "zoomFactor": 0.6823712046946979,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -7102,7 +7102,7 @@
                 "",
                 "Powerup 4.aac",
                 "no",
-                "10",
+                "5",
                 "1"
               ]
             }
