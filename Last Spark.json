@@ -1202,7 +1202,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4583360322149792,
+        "zoomFactor": 0.779171254765465,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1268,7 +1268,7 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 94,
+          "height": 67,
           "hidden": true,
           "keepRatio": true,
           "layer": "",
@@ -1787,13 +1787,13 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 94,
+          "height": 159,
           "keepRatio": true,
           "layer": "",
           "name": "IndustrialPlatformVisual",
           "persistentUuid": "9978c842-ae8d-4c87-bd58-1a1584da2f8f",
-          "width": 636,
-          "x": -157,
+          "width": 674,
+          "x": -195,
           "y": 473,
           "zOrder": 2,
           "numberProperties": [],
@@ -2107,13 +2107,14 @@
         {
           "angle": 0,
           "customSize": true,
+          "depth": 1,
           "height": 5,
           "keepRatio": true,
           "layer": "",
           "name": "IndustrialPlatformTopTrim",
           "persistentUuid": "a9165389-a47c-4be2-8450-b87bc398f928",
-          "width": 636,
-          "x": -157,
+          "width": 674,
+          "x": -195,
           "y": 473,
           "zOrder": 3,
           "numberProperties": [],
@@ -4765,6 +4766,54 @@
             },
             {
               "name": "Jump",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Foozle_2DC0001_Cute_Robot/Assets/Jump/Armature_Jump_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 327,
+                        "y": 510
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "centre",
+                        "x": 327,
+                        "y": 331
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 204,
+                            "y": 153
+                          },
+                          {
+                            "x": 450,
+                            "y": 153
+                          },
+                          {
+                            "x": 450,
+                            "y": 510
+                          },
+                          {
+                            "x": 204,
+                            "y": 510
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "JumpBackup21",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -8291,8 +8340,8 @@
   "tests": [
     {
       "description": "Player falls onto the floor, walks left/right with arrows and A/D, and jumps with Space reaching a clear height.",
-      "lastRunAt": 1794713143523,
-      "lastRunDurationMs": 1156,
+      "lastRunAt": 1794715389314,
+      "lastRunDurationMs": 949,
       "lastRunFramesExecuted": 483,
       "lastRunStatus": "passed",
       "name": "Player platformer controls",
